@@ -4,16 +4,17 @@
 > Giữ nguyên tên file `TEAMS.md` ở thư mục gốc repo, giữ nguyên các dòng `- Tên nhóm:` … và tiêu đề cột của bảng. Chỉ thay chỗ `____`.
 > Kiểm bằng `python run.py check`: phần "Kiểm TEAMS.md" không báo gì là đúng format.
 
-- Tên nhóm: ____
-- Lớp: ____
-- Track: ____
-- Link repo: ____
+- Tên nhóm: LOMDOM
+- Lớp: L3B
+- Track: C
+- Link repo: https://github.com/thd050810/K5-Day15-L3B-LOMDOM
 
-| STT | Họ và tên | Mã học viên | Vai trò | Phần việc chính |
-|---|---|---|---|---|
-| 1 | ____ | ____ | Đội trưởng | ____ |
-| 2 | ____ | ____ | Thành viên | ____ |
-| 3 | ____ | ____ | Thành viên | ____ |
+| STT | Họ và tên     | Mã học viên | Vai trò    | Phần việc chính                                                         |
+| --- | ------------- | ----------- | ---------- | ----------------------------------------------------------------------- |
+| 1   | Đỗ Minh Thanh | 2A202603793 | Đội trưởng | Bằng chứng pain, impact, canvas, nộp checkpoint (evidence/, spec §1–§2) |
+| 2   | ____          | ____        | Thành viên | Thiết kế và bản chạy thử, nối model (spec §4, codebase/)                |
+| 3   | ____          | ____        | Thành viên | Chỗ khó, bộ câu thử, metric, đánh giá (spec §5–§7, data/, eval/)        |
+| 4   | ____          | ____        | Thành viên | Mô phỏng chi phí, slide, video demo (cost/, spec §8, slides/)           |
 
 **Quy tắc điền**
 - **Lớp:** `L3A` hoặc `L3B`. **Track:** một chữ `A` (EdTech), `B` (Y tế), `C` (Du lịch), `D` (Thương mại điện tử), `E` (Tài chính) hoặc `F` (Làn khác). **Link repo:** link GitHub công khai của nhóm.
