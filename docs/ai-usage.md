@@ -6,8 +6,8 @@ README của nhóm có mục "Dùng AI vào việc gì" (2–3 dòng, bắt bu�
 
 | Việc | Công cụ AI | AI làm gì | Người kiểm/sửa gì | Ai phụ trách |
 |---|---|---|---|---|
-| Code bản chạy thử | | | | |
-| Prompt / thiết kế lời gọi mô hình | | | | |
+| Code bản chạy thử | Antigravity (AI assistant) | Viết nháp `codebase/tools.py` (`tra_dat_cho`, `tra_chuyen_thay_the`) và `codebase/agent.py` (`answer`, trích xuất ràng buộc, kiểm tra an toàn) | Trần Phạm Minh Sơn, Nguyễn Quang Huy kiểm tra chạy thử `python run.py` | Trần Phạm Minh Sơn, Nguyễn Quang Huy |
+| Prompt / thiết kế lời gọi mô hình | Antigravity (AI assistant) | Soạn nháp `SYSTEM` prompt và hoàn thiện sơ đồ/bảng công cụ ở `spec.md` §4, §6 khớp với `codebase/` | Nguyễn Quang Huy, Trần Phạm Minh Sơn rà khớp `metric_spec.yaml` | Nguyễn Quang Huy, Trần Phạm Minh Sơn |
 | Đào data (viết script đếm, gợi ý nhãn) | | | Kiểm tay __ dòng, khớp __ | |
 | Rà câu hỏi phỏng vấn / khảo sát | | Chỉ rà câu dẫn dắt | | |
 | Viết câu thử (benchmark) | | | Mỗi câu thử có `source`; câu thử AI viết được ghi rõ | |

@@ -108,8 +108,9 @@ Nhóm dùng stack khác (Node, Streamlit, notebook…): sửa hàm `run_app()` t
 
 | Thành phần | Thật / Giả | Ghi chú |
 |---|---|---|
-| Lời gọi AI ở quyết định trung tâm | **Thật** (bắt buộc từ CP3) | Model: ____ |
-|  |  |  |
+| Lời gọi AI ở quyết định trung tâm | **Giả ở CP2** → **Thật** (từ CP3) | CP2 chạy `MODEL_PROVIDER=fake` trong `codebase/ai.py` để thử hết luồng; CP3 nối model thật |
+| Công cụ tra đặt chỗ & chuyến bay (`codebase/tools.py`) | **Giả (`synthetic`)** | Đọc dữ liệu viết tay trong `data/flights.json` (hãng dựng "Bay Mẫu"), chưa nối API hãng thật |
+| Thao tác giữ chỗ / đổi vé / hoàn vé | **Không tự thực hiện** | Trợ lý chỉ gợi ý phương án và nhắc khách tự xác nhận trên app |
 
 ## Dùng AI vào việc gì
 

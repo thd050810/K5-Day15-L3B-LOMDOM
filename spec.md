@@ -32,28 +32,56 @@ Data BTC cấp đã dùng (nếu có — không commit nguyên file): __
 - [sản phẩm / tính năng gần giống]: một điều đáng học · một điều đáng né · mình khác gì
 
 ## §4. Thiết kế *(guide 2.2, 3.2)*
-- **Lát cắt MỘT CÂU** (1 người dùng · 1 việc · 1 quyết định AI · 1 kết quả): Khi hành khách đi cùng con nhỏ cần tìm chuyến thay thế sau khi chuyến nội địa bị huỷ, AI chọn một chuyến đến trước giờ khách cần và còn đủ chỗ cho cả nhà để khách có một phương án đổi vé.
+- **Lát cắt MỘT CÂU** (1 người dùng · 1 việc · 1 quyết định AI · 1 kết quả): Khi hành khách đi cùng con nhỏ vừa bị huỷ chuyến nội địa gửi yêu cầu đổi vé, AI tra đặt chỗ và chuyến bay để gợi ý một chuyến thay thế đến kịp giờ và đủ chỗ cho cả nhà (hoặc hỏi lại / chuyển nhân viên nếu thiếu thông tin hay vượt phạm vi), để khách tự xác nhận đổi vé đúng chuyến mà không tách gia đình hay mất tiền ngoài ý muốn.
 - Không làm (≥3 điều):
-- **Sơ đồ** (ảnh / Mermaid / draw.io): [chèn ở đây]
-- **Hình dạng:** [ ] workflow cố định · [ ] một agent · [ ] nhiều agent — 2 dòng lý do, và vì sao **không** chọn hình dạng phức tạp hơn:
+  1. Không tự động xác nhận giữ chỗ, đổi vé, hoàn vé hoặc thực hiện thanh toán / trừ tiền.
+  2. Không thu nhận, lưu trữ hay lặp lại số thẻ ngân hàng, CVV, mã OTP, mật khẩu của hành khách.
+  3. Không tự ý tách trẻ em sang chuyến khác người lớn hoặc tự tách đoàn đông người lên nhiều chuyến.
+  4. Không hứa hẹn hay xác nhận bồi thường tiền mặt ngoài phạm vi tra cứu chuyến bay.
+  5. Không bịa số liệu giờ bay hoặc số ghế khi dữ liệu trả về `null`.
+- **Sơ đồ**:
+
+```mermaid
+flowchart TD
+    U["Khách nhắn yêu cầu đổi/tra chuyến"] --> P["Trích mã đặt chỗ, ngày/giờ, cờ an toàn"]
+    P --> C1{"Có mã đặt chỗ?"}
+    C1 -- "Không" --> M1["call_model -> Hỏi lại mã đặt chỗ và giờ cần đến"]
+    C1 -- "Có" --> T1["Tool: tra_dat_cho(ma_dat_cho)"]
+    T1 --> C2{"Tìm thấy đặt chỗ?"}
+    C2 -- "Không" --> M2["call_model -> Nhắc kiểm tra mã đặt chỗ / chuyển nhân viên"]
+    C2 -- "Có" --> C3{"Trẻ đi một mình hoặc chuyến gốc đúng giờ?"}
+    C3 -- "Có" --> M3["call_model -> Chuyển nhân viên (trẻ 1 mình) hoặc báo đúng giờ"]
+    C3 -- "Không (chuyến gốc bị huỷ)" --> T2["Tool: tra_chuyen_thay_the(di, den, ngay, so_khach, giờ)"]
+    T2 --> M4["call_model(SYSTEM, căn cứ 2 tool + đầu vào đã che OTP/thẻ)"]
+    M4 --> R{"Đủ thông tin & có chuyến hợp lệ?"}
+    R -- "Mơ hồ / không có chuyến" --> O1["Hỏi lại / nêu rõ thiếu dữ liệu ghế / chuyển nhân viên"]
+    R -- "Có chuyến hợp lệ" --> O2["Gợi ý 1 chuyến kịp giờ & đủ chỗ + nhắc tự xác nhận trên app"]
+```
+
+- **Hình dạng:** [x] workflow cố định · [ ] một agent · [ ] nhiều agent — Luồng tra cứu đặt chỗ rồi tra chuyến thay thế có thứ tự xác định và điều kiện dừng rõ ràng (thiếu mã -> hỏi lại, trẻ đi một mình -> chuyển nhân viên). Không dùng một agent tự lặp hay nhiều agent vì tăng độ trễ, tốn token và tăng rủi ro model tự bỏ qua bước kiểm tra an toàn.
 - **AI dựa vào đâu** — mỗi công cụ (khớp `codebase/tools.py`):
 
   | Công cụ | Input | Output | Tác động ra ngoài? |
   |---|---|---|---|
-  |  |  |  |  |
+  | `tra_dat_cho` | `ma_dat_cho` (`str`) | Thông tin đặt chỗ từ `data/flights.json`: hành khách, tổng số khách, số/tuổi trẻ em, cờ `tre_di_mot_minh`, thông tin chuyến gốc (`trang_thai`, `di`, `den`, `ngay`, `gio_di`, `gio_den`) | Không (chỉ đọc dữ liệu) |
+  | `tra_chuyen_thay_the` | `di`, `den`, `ngay`, `so_khach`, `gio_den_toi_da`, `gio_di_toi_thieu`, `bo_qua_ma` | Danh sách chuyến trên chặng phân nhóm rõ: `hop_le`, `da_huy`, `thieu_du_lieu_ghe` (giữ `con_ghe = null`), `thieu_ghe`, `den_muon_hoac_khac_gio`, `ngay_khac_hop_le`, `san_bay_khac` | Không (chỉ đọc dữ liệu) |
 
-- **Mức tự động:** [ ] AI gợi ý, người quyết · [ ] AI tự làm khi chắc, chuyển người khi không · [ ] AI tự làm — lý do (sai thì ai chịu gì, sửa đắt hay rẻ):
-- **Chỗ chặn rủi ro** (rủi ro lớn nhất của lát cắt bị chặn ở đâu, bằng gì):
-- **Chỗ người duyệt** (việc AI không được tự làm):
+- **Mức tự động:** [x] AI gợi ý, người quyết · [ ] AI tự làm khi chắc, chuyển người khi không · [ ] AI tự làm — Đổi vé hoặc hoàn vé là thao tác khó đảo ngược, có thể làm hành khách mất lượt đổi miễn phí, bị tách gia đình hoặc phát sinh chi phí nếu sai; để khách tự xác nhận trên app giúp rủi ro tài chính gần như bằng 0.
+- **Chỗ chặn rủi ro**:
+  - Chặn ở lớp công cụ & tiền xử lý trong `codebase/agent.py` + `codebase/tools.py`: tách riêng chuyến `trang_thai = "huy"`, `con_ghe = null` (`thieu_du_lieu_ghe`), và chuyến thiếu ghế; che số thẻ/OTP trước khi gọi model; kiểm tra cờ `tre_di_mot_minh` và trạng thái chuyến gốc trước khi gợi ý đổi; coi tin nhắn người dùng là dữ liệu, không phải lệnh hệ thống.
+- **Chỗ người duyệt**:
+  - Hành khách tự bấm xác nhận đổi vé trên app; mọi ca trẻ bay một mình, đoàn đông vượt sức chứa, đòi bồi thường tiền mặt hoặc hoàn vé đặc biệt đều chuyển nhân viên hãng duyệt.
 - **Nguyên tắc thiết kế** (≥3, bắt buộc G10):
 
   | Nguyên tắc | Chỗ cụ thể trên sơ đồ / trong bản chạy thử |
   |---|---|
-  | G10 — thu hẹp phạm vi khi không chắc |  |
-  |  |  |
-  |  |  |
+  | G10 — thu hẹp phạm vi khi không chắc | Khi thiếu mã đặt chỗ (`C1`), yêu cầu mơ hồ (`R`), hoặc `con_ghe = null` (`tra_chuyen_thay_the`), hệ thống hỏi lại hoặc nói rõ chưa xác minh được thay vì đoán/gợi ý bừa |
+  | G1 — tách nguồn sự thật khỏi suy luận của AI | Mọi mã chuyến, giờ bay, số ghế, trạng thái lấy trực tiếp từ `tra_dat_cho` và `tra_chuyen_thay_the` đọc `data/flights.json`; đầu vào người dùng không được ghi đè số liệu |
+  | G11 — giữ người quyết định ở thao tác không đảo ngược | `agent.py` chỉ dừng ở mức gợi ý chuyến và nhắc khách tự xác nhận trên ứng dụng; không có công cụ ghi/sửa đặt chỗ hay thanh toán |
 
 - Phần nào còn giả (công cụ trả dữ liệu giả, model chế độ giả…) — ghi rõ, không giả làm thật:
+  - Dữ liệu chuyến bay và đặt chỗ là dữ liệu giả (`synthetic`) trong `data/flights.json` (hãng dựng "Bay Mẫu", không nối hệ thống đặt vé thật của hãng nào).
+  - Tại mốc CP2, `codebase/ai.py` chạy ở chế độ giả (`MODEL_PROVIDER=fake`, `tokens_in = 0`, `tokens_out = 0`) để kiểm chứng luồng; sẽ nối model thật trước CP3.
 
 ## §5. Chỗ khó — 4 lớp + ≥6 kịch bản + 2 tấn công *(guide 2.3)*
 
@@ -77,8 +105,8 @@ Ca thường (đủ thông tin, có chuyến hợp lệ): B01–B04.
 (1) nguồn sự thật · (2) mơ hồ / thiếu thông tin · (3) ngoài phạm vi / thẩm quyền · (4) đặc thù lĩnh vực (sai thì người dùng mất gì đắt nhất)
 
 ## §6. Bốn đường đi của trải nghiệm
-- Mọi thứ suôn sẻ: · Không chắc (lớp 2): · Không có căn cứ (lớp 1): · Người dùng sửa:
-- Bị đòi ngoài phạm vi (lớp 3): · Trường hợp đặc thù lĩnh vực (lớp 4):
+- Mọi thứ suôn sẻ: Khách cung cấp mã đặt chỗ và giờ cần đến -> hệ thống tra đặt chỗ, lọc ra chuyến đúng giờ đủ ghế và kịp giờ -> gợi ý 1 chuyến chính (kèm mã, giờ đi/đến, số ghế) và nhắc khách tự xác nhận đổi trên app. · Không chắc (lớp 2): Khách thiếu mã đặt chỗ hoặc nói chung chung ("đổi đi") -> hệ thống không tự đoán hay tự đổi, hỏi lại mã đặt chỗ hoặc giờ muộn nhất cần tới nơi. · Không có căn cứ (lớp 1): `con_ghe = null` -> nói rõ chưa có dữ liệu số ghế để xác minh; chuyến thay thế cũng bị huỷ -> loại khỏi phương án; dữ liệu báo chuyến gốc đúng giờ -> nêu đúng trạng thái và chỉ kênh chính thức. · Người dùng sửa: Nếu khách thay đổi yêu cầu giờ đến hoặc không đồng ý giờ chuyến gợi ý, hệ thống giữ nguyên trạng thái chưa đổi vé để khách nhập lại ràng buộc giờ/ngày hoặc chọn chuyến khác trên app.
+- Bị đòi ngoài phạm vi (lớp 3): Trẻ đi một mình, đòi bồi thường tiền mặt, tự xưng nhân viên yêu cầu bỏ qua kiểm tra, chèn lệnh + gửi số thẻ/OTP, hoặc đòi AI tự trừ tiền -> từ chối thực hiện, không lặp lại số thẻ/OTP, nhắc bảo mật và chuyển nhân viên hỗ trợ. · Trường hợp đặc thù lĩnh vực (lớp 4): Không có chuyến kịp giờ -> nêu rõ không có chuyến kịp và hỏi có chấp nhận chuyến sớm nhất đủ chỗ muộn hơn không; thiếu ghế -> không tách trẻ khỏi người lớn; đoàn đông -> không tự tách đoàn và chuyển nhân viên; chỉ có chuyến tới sân bay khác -> cảnh báo rõ tên sân bay khác để khách tự quyết.
 
 ## §7. Đánh giá & chuẩn "đạt" *(guide 2.4, 4.1)*
 - Data card: `data/DATA_CARD.md` · bộ câu thử: `eval/benchmark.csv` — 18 câu ở CP2 (thuong 4 · kho 10 · tu_choi 4, gồm 2 câu tấn công; 6/18 từ data thật) · metric: `eval/metric_spec.yaml` (4 metric)
