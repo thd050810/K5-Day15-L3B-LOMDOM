@@ -12,7 +12,7 @@ README của nhóm có mục "Dùng AI vào việc gì" (2–3 dòng, bắt bu�
 | Rà câu hỏi phỏng vấn / khảo sát | | Chỉ rà câu dẫn dắt | | |
 | Viết câu thử (benchmark) | | | Mỗi câu thử có `source`; câu thử AI viết được ghi rõ | |
 | Sinh data `synthetic` (nếu có) | | | Seed __ · kiểm tay __ dòng | |
-| Chấm cột `pass` bằng LLM (nếu có) | | | Kiểm tra thủ công __ câu thử, khớp __/__ | |
+| Chấm cột `pass` bằng LLM (nếu có) | Claude Code | Chấm nháp 26 câu lượt 1 theo `pass_criterion` + 4 metric, ghi lý do ở `ghi_chu` | Chờ Lê Anh Tuấn kiểm tay ≥ 5 câu (gồm B09 trượt), khớp __/__ | Lê Anh Tuấn |
 | Slide, văn bản | Claude Code | Soạn nháp CP1: canvas, giả thuyết, bài toán, lát cắt | ____ | ____ |
 
 **Không dùng AI để:** tạo người được phỏng vấn, trích dẫn, câu trả lời khảo sát; sửa kết quả các lượt đã chạy (`eval/run-*.csv`, `cost/simulate-*.csv`, `traces/`).
