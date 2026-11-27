@@ -1,48 +1,33 @@
 # Tổng hợp bằng chứng pain
 
-> Điền ở guide bước 1.2, xong trước **CP3 10:00 Thứ Bảy 28/11**. Chấm ở rubric R1.
-> Ba nguồn ngang nhau — tối thiểu **≥1 nguồn đạt ngưỡng**. Mạnh nhất: đào data ra insight → hỏi người dùng để kiểm lại (hoặc ngược lại).
+## 1. Nguồn và tiến độ CP2
 
-## 1. Nguồn đã dùng
-
-| Nguồn | Đạt ngưỡng? | File |
+| Nguồn | Tiến độ | Tài liệu |
 |---|---|---|
-| Đào data (x/N, %, cách đếm chạy lại được, ≥5 ví dụ) | ☐ | `evidence/data-mining.md` |
-| Phỏng vấn (≥3 người ngoài nhóm, đúng người dùng) | ☐ | `evidence/interviews/P1.md`… |
-| Khảo sát (≥20 người ngoài nhóm, đúng người dùng) | ☐ | `evidence/survey/` |
+| Đào dữ liệu công khai | Đã mã hoá 20 review Porter Airlines trên một trang Trustpilot, có cách đếm chạy lại và các ví dụ ngoài mẫu | [Cách đếm và nguồn](data-mining.md) · [Bảng mã hoá](c3-reviews.csv) |
+| Phỏng vấn | Chưa có biên bản hoặc lịch hẹn được ghi nhận | [Mẫu phỏng vấn](interviews/TEMPLATE.md) |
+| Khảo sát | Đã soạn bộ câu hỏi, chưa ghi nhận phản hồi thật | [Bản nháp câu hỏi](survey/questions-C3.md) |
 
 ## 2. Số chính
 
-- Đào data: __/__ (__%) …
-- Phỏng vấn: __/3 người gặp *(n nhỏ không ghi %)* · số lần / tháng: P1 __, P2 __, P3 __ · mỗi lần mất __–__ phút
-- Khảo sát: n = __ · __/__ (__%) …
+- **3/20 review (15%)** nêu trở ngại với chuyến thay thế sau khi bị huỷ.
+- **0/20 review** nói rõ nhóm bị xếp sang các chuyến khác nhau hoặc chuyến thay thế thiếu chỗ cho cả nhóm.
+- Hai tỷ lệ dùng chung mẫu 20 review của một hãng, gồm mọi mức sao. Mẫu chưa cho biết tần suất gặp vấn đề của gia đình đi chuyến nội địa tại Việt Nam.
 
-Phỏng vấn nhiều vai thì đếm theo từng vai, không cộng chung.
+## 3. Ví dụ có nguồn
 
-| | Vai | Gặp pain? | Số lần / 1 tháng qua | Lần gần nhất mất | Đang xoay xở bằng |
-|---|---|---|---|---|---|
-| P1 | | | | | |
-| P2 | | | | | |
-| P3 | | | | | |
+| Ca | Trích dẫn hoặc hệ quả |
+|---|---|
+| Review #8 trong mẫu | “rebooked on another flight 96 hours later”. Chuyến thay thế cũng bị huỷ. [Trustpilot](https://au.trustpilot.com/reviews/69a857dfe5d2f235bbf85774) |
+| Review #20 trong mẫu | “get on a flight to Hamilton”. Khách kể phát sinh 165 đô la tiền xe. [Trang mẫu Trustpilot](https://au.trustpilot.com/review/flyporter.com?page=7) |
+| Nhóm 10 người tại Việt Nam, ngoài mẫu | “nhân viên ở đây cho biết đã hết vé”. Theo bài báo, đoàn đi muộn thêm một ngày và phát sinh hơn 2,5 triệu đồng. [Tuổi Trẻ](https://tuoitre.vn/se-cong-khai-ly-do-cham-huy-chuyen-bay-622561.htm) |
+| Hai khách đi cùng sự kiện, ngoài mẫu | “placed them on separate return flights”. Người tổ chức kể đã liên hệ hỗ trợ ít nhất 5 lần. [Trustpilot](https://www.trustpilot.com/review/www.ita-airways.com?page=5) |
+| Gia đình có trẻ nhỏ, ngoài mẫu | “I had to manually rebook our flights through the AA website”. Khách kể đến nơi muộn 48 giờ. [AirAdvisor](https://airadvisor.com/en-us/airline-complaints/american-airlines/comments/page/5) |
 
-## 3. ≥5 trích dẫn hoặc ví dụ nguyên văn (có nguồn, bỏ tên)
+## 4. Kết luận
 
-1. "…" — P_ / dòng data __ / phiếu khảo sát __
-2.
-3.
-4.
-5.
+Dữ liệu công khai ghi nhận khó khăn khi tìm chuyến thay thế. Nhóm thu hẹp lát cắt vào một quyết định: gợi ý một chuyến đến kịp giờ và còn đủ chỗ cho cả nhà, sau đó khách tự quyết định đổi vé. Cần hỏi thêm đúng nhóm người dùng để đo mức độ thường gặp và thời gian họ mất khi tìm chuyến.
 
-## 4. Các nguồn có khớp nhau không
+## Lịch hẹn CP2
 
-Data nói __; người dùng nói __. Khớp / lệch ở đâu, vì sao: __
-
-## 5. Kết luận
-
-Giả thuyết ở `evidence/hypothesis.md`: **đúng / sai / phải đổi** — vì __. Điều vẫn chưa biết: __
-
-## Lịch hẹn (dùng cho CP2 — chỉ ghi vai và giờ, không tên)
-
-| Vai | Giờ hẹn | Đã xong? |
-|---|---|---|
-| | | |
+Chưa có lịch hẹn được ghi nhận trong repo.
