@@ -1,104 +1,25 @@
-# Khảo sát C3 · Tìm chuyến thay thế cho gia đình sau khi chuyến nội địa bị huỷ
+# Khảo sát — Trải nghiệm xử lý khi chuyến bay nội địa bị huỷ / đổi lịch
 
-**Trạng thái** · Bản nháp Google Forms, chưa phát hành.
+> Điền ở guide bước 1.2.
+> Ngưỡng: **≥20 người ngoài nhóm, đúng người dùng**, giữ log đủ câu hỏi và từng câu trả lời.
 
-## Lời giới thiệu trong form
+## Bộ câu hỏi (`*` = bắt buộc)
 
-Nhóm LOMDOM muốn tìm hiểu cách hành khách đi cùng trẻ nhỏ xử lý khi chuyến bay nội địa bị huỷ. Hãy trả lời theo lần gần nhất bạn trực tiếp xử lý. Vui lòng tránh ghi tên, mã đặt chỗ, số điện thoại hoặc thông tin nhận diện trẻ.
+| # | Câu hỏi | Kiểu trả lời |
+|---|---|---|
+| 1 | Bạn là:* | Chọn một (Học viên L3A · Học viên L3B · Bạn bè / người thân (đi làm) · Sinh viên · Khác) |
+| 2 | Lần gần nhất chuyến bay nội địa của bạn bị huỷ hoặc hãng tự đổi giờ bay là khi nào?* | Chọn một (Trong 1 tháng qua · 1–6 tháng trước · 6–12 tháng trước · Lâu hơn 1 năm · Chưa bao giờ) |
+| 3 | Trong 12 tháng qua, bạn gặp tình trạng chuyến bay nội địa bị huỷ hoặc tự đổi giờ mấy lần? (Nhập số, vd: 0, 1, 2...)* | Số |
+| 4 | Lần gần nhất đó, bạn đã làm thế nào để xử lý (đổi chuyến / hoàn vé)? | Chọn nhiều (Tự thao tác trên app/web hãng bay hoặc OTA (Traveloka, Booking...) · Gọi tổng đài hãng bay / OTA · Nhắn chat hỗ trợ · Ra quầy sân bay · Nhờ đại lý / người quen · Bỏ vé / chấp nhận lịch mới · Khác) |
+| 5 | Lần đó bạn mất khoảng bao lâu để xử lý xong? | Chọn một (Dưới 15 phút · 15–30 phút · 30–60 phút · 60–90 phút · Trên 90 phút) |
+| 6 | Lần đó bạn có xong việc không? | Chọn một (Xong (đổi được chuyến phù hợp / hoàn vé suôn sẻ) · Xong một phần (chấp nhận giờ xấu, mất thêm phí hoặc phải chờ hoàn tiền lâu) · Bỏ (không xử lý được / bỏ vé)) |
+| 7 | Điều gì khó chịu hoặc lo lắng nhất ở lần xử lý đó? | Đoạn văn |
+| 8 | (Tuỳ chọn) Bạn có sẵn lòng cho nhóm hỏi thêm 10 phút không? Nếu có, vui lòng để lại cách liên hệ (không bắt buộc) | Đoạn văn ngắn (không bắt buộc) |
 
-## Cài đặt Google Forms
+Không thu tên, email, mã học viên trong form (trừ câu 8 nếu người trả lời tự để lại — **phải xoá cột câu 8 trước khi commit `results.csv`**).
 
-- Gửi form cho người ngoài nhóm từng trực tiếp xử lý chuyến bay nội địa bị huỷ khi đi cùng trẻ nhỏ.
-- Tắt thu thập email. Đặt câu 1 ở phần sàng lọc riêng.
-- Dùng «Chuyển đến phần dựa trên câu trả lời» ở câu 1. Lựa chọn đầu tiên chuyển sang phần câu 2–9. Ba lựa chọn còn lại kết thúc form.
-- Khi tổng hợp phản hồi thật, dùng những câu trả lời qua câu sàng lọc. Với mỗi chỉ số, ghi rõ số người đã trả lời câu tương ứng.
+## Lưu vào thư mục này
 
-## Câu hỏi
-
-### 1. Bạn từng trực tiếp xử lý chuyến bay nội địa bị huỷ khi đi cùng trẻ nhỏ chưa?
-
-Chọn một, bắt buộc.
-
-- Có, chuyến bị huỷ khi tôi đi cùng ít nhất một trẻ nhỏ
-- Có, chuyến bị huỷ nhưng tôi không đi cùng trẻ nhỏ
-- Chuyến của tôi chỉ bị đổi giờ
-- Tôi chưa từng gặp các trường hợp trên
-
-### 2. Lần gần nhất đó xảy ra khi nào?
-
-Chọn một, bắt buộc.
-
-- Trong 1 tháng qua
-- Hơn 1 đến 6 tháng trước
-- Hơn 6 đến 12 tháng trước
-- Hơn 12 tháng trước
-
-### 3. Lúc đó có bao nhiêu người cần đi cùng chuyến, tính cả trẻ nhỏ?
-
-Số nguyên từ 2 trở lên, bắt buộc.
-
-### 4. Lúc đó cả nhóm có giờ phải đến nơi không?
-
-Chọn một, bắt buộc.
-
-- Có giờ phải đến
-- Không có giờ phải đến
-- Không nhớ
-
-### 5. Bạn đã dùng những kênh nào để tìm chuyến thay thế?
-
-Chọn nhiều, bắt buộc. Chọn riêng «Không tìm chuyến thay thế» nếu áp dụng.
-
-- App hoặc website của hãng bay
-- App hoặc website của bên bán vé
-- Tổng đài
-- Chat hỗ trợ
-- Quầy sân bay
-- Đại lý hoặc người quen
-- Không tìm chuyến thay thế
-- Khác
-
-### 6. Từ khi biết chuyến bị huỷ đến khi chốt cách đi tiếp hoặc quyết định dừng, bạn mất khoảng bao lâu?
-
-Chọn một, bắt buộc.
-
-- Dưới 15 phút
-- Từ 15 đến dưới 30 phút
-- Từ 30 đến dưới 60 phút
-- Từ 60 đến 120 phút
-- Trên 120 phút
-- Không nhớ
-
-### 7. Trong lúc tìm chuyến thay thế, bạn thực sự gặp vấn đề gì?
-
-Chọn nhiều, tuỳ chọn. Bỏ qua câu này nếu không tìm chuyến. Chọn riêng «Không gặp trở ngại đáng kể» nếu áp dụng.
-
-- Không biết chuyến nào còn đủ chỗ cho cả nhóm
-- Có chuyến còn chỗ nhưng đến sau giờ cần có mặt
-- Số chỗ thay đổi trong lúc thao tác
-- Thông tin trên các kênh khác nhau
-- Chờ liên hệ hỗ trợ
-- Phí hoặc điều kiện đổi vé chưa rõ
-- Không gặp trở ngại đáng kể
-- Khác
-
-### 8. Cuối cùng, cả nhóm đã đi tiếp như thế nào?
-
-Chọn một, bắt buộc.
-
-- Cả nhóm bay cùng chuyến và đến kịp giờ cần có mặt
-- Cả nhóm bay cùng chuyến nhưng đến muộn
-- Cả nhóm bay cùng chuyến và không có giờ phải đến
-- Cả nhóm bay cùng chuyến nhưng không nhớ có đến kịp không
-- Cả nhóm phải đi các chuyến khác nhau
-- Cả nhóm chuyển sang phương tiện khác
-- Cả nhóm không đi nữa
-- Khác
-
-### 9. Bạn nhớ chi tiết nào nhất về cách cả nhóm xử lý lần đó?
-
-Đoạn văn, tuỳ chọn. Có thể ghi số chỗ hoặc giờ cần đến nếu nhớ.
-
-## Tệp kiểm thử đi kèm
-
-Tệp [results-C3-SYNTHETIC.csv](../../data/results-C3-SYNTHETIC.csv) chứa 25 tình huống hư cấu để thử phân nhánh và nhập CSV. Mỗi dòng có mã `SYN-C3` và nhãn `synthetic`. Tệp dùng dấu ` | ` giữa các lựa chọn trong cùng một ô. Kết quả khảo sát dùng bản xuất riêng sau khi thu phản hồi thật.
+- `questions.md` — nguyên bộ câu hỏi + kênh đã gửi + giờ mở / chốt (file này).
+- `results.csv` — bản xuất **đã xoá** mọi cột nhận ra người trả lời (cột câu 8 nếu có thông tin liên hệ). Bản gốc còn thông tin cá nhân đặt tên `raw-*.csv` (đã có trong `.gitignore`) và **không** commit.
+- Số chính + ≥3 câu trả lời nguyên văn → chép vào `evidence/summary.md`. Dưới khoảng 10 người thì chỉ ghi `x/n`, không ghi `%`.
