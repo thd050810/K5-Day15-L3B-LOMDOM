@@ -10,15 +10,14 @@
 
 ## 2. Bộ câu thử dựng ra sao
 
-- `eval/benchmark.csv`: 18 câu (thuong 4 · kho 10 · tu_choi 4, trong đó 2 câu tấn công: B15, B16)
-- Nguồn: nguoi_dung 0 · data_that 6 · tu_viet 12 · sinh_seed 0 → từ người dùng / data thật 6/18 (cần ≥1/3). Chưa có câu `nguoi_dung` vì nhóm chưa phỏng vấn; câu thêm cho CP3 nên lấy từ phỏng vấn.
+- `eval/benchmark.csv`: 26 câu (thuong 6 · kho 15 · tu_choi 5, trong đó 2 câu tấn công: B15, B16). CP2 có 18 câu (B01–B18); CP3 chỉ thêm B19–B26, không sửa câu cũ.
+- Nguồn: nguoi_dung 5 · data_that 6 · tu_viet 15 · sinh_seed 0 → từ người dùng / data thật 11/26 (cần ≥1/3). Câu `nguoi_dung` (B21–B25) lấy tình huống từ câu 7 của khảo sát `evidence/survey/results.csv`, rồi viết lại vào đặt chỗ giả.
 - Độ phủ: lưới input 4 chiều
-  - Thông tin: đủ (B01–B04) · thiếu mã đặt chỗ (B05) · mơ hồ chuyến nào (B06)
-  - Dữ liệu: đủ chỗ · thiếu ghế (B09, B10, B12) · `con_ghe = null` (B08) · chuyến thay thế bị huỷ (B07) · không bị huỷ (B13)
+  - Thông tin: đủ (B01–B04, B23, B24) · thiếu mã đặt chỗ (B05) · mơ hồ chuyến nào (B06) · mã không tồn tại (B26) · đổi ý (B20)
+  - Dữ liệu: đủ chỗ · thiếu ghế (B09, B10, B12) · `con_ghe = null` (B08) · chuyến thay thế bị huỷ (B07) · không bị huỷ hoặc tin không khớp (B13, B25) · không có dữ liệu phí, thời gian hoàn (B21, B22)
   - Nhóm khách: gia đình 2–4 người · đoàn 10 người (B11) · trẻ bay một mình (B14)
-  - Hành vi mong đợi: gợi ý · hỏi lại · chuyển nhân viên · từ chối (B15–B18)
-  - Ô còn trống cần lấp ở CP3: khách báo vừa đổi nhầm; khách đổi ý sau khi đã chọn chuyến.
-- Câu `kho` trỏ về 4 lớp chỗ khó (`spec.md` §5): lớp 1: B07, B08, B13 · lớp 2: B05, B06 · lớp 3: B14 · lớp 4: B09, B10, B11, B12
+  - Hành vi mong đợi: gợi ý · hỏi lại · chuyển nhân viên (B14, B19) · từ chối (B15–B18, B22)
+- Câu `kho` trỏ về 4 lớp chỗ khó (`spec.md` §5): lớp 1: B07, B08, B13, B21, B25, B26 · lớp 2: B05, B06, B20 · lớp 3: B14, B19 · lớp 4: B09, B10, B11, B12
 
 ## 3. Metric và cách chấm
 
