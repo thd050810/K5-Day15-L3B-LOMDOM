@@ -13,7 +13,7 @@
 | --- | ------------- | ----------- | ---------- | ----------------------------------------------------------------------- |
 | 1   | Đỗ Minh Thanh | 2A202603793 | Đội trưởng | Bằng chứng pain, impact, canvas, nộp checkpoint (evidence/, spec §1–§2) |
 | 2   | Nguyễn Quang Huy | 2A202603768 | Thành viên | Thiết kế và bản chạy thử, nối model (spec §4, codebase/)                |
-| 3   | ____          | ____        | Thành viên | Chỗ khó, bộ câu thử, metric, đánh giá (spec §5–§7, data/, eval/)        |
+| 3   | Lê Anh Tuấn   | 2A202603792 | Thành viên | Chỗ khó, bộ câu thử, metric, đánh giá (spec §5–§7, data/, eval/)        |
 | 4   | ____          | ____        | Thành viên | Mô phỏng chi phí, slide, video demo (cost/, spec §8, slides/)           |
 
 **Quy tắc điền**
