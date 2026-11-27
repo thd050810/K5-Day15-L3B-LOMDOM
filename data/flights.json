@@ -1,0 +1,44 @@
+{
+  "_ghi_chu": "Dữ liệu GIẢ (synthetic), nhóm viết tay, không sinh ngẫu nhiên nên không có seed. Hãng dựng 'Bay Mẫu' (mã BM), mã đặt chỗ dựng. Không có người thật. Mô tả ở data/DATA_CARD.md. Ngày tham chiếu: hôm nay = 2026-11-27, 'mai' = 2026-11-28. con_ghe = null nghĩa là KHÔNG có dữ liệu số ghế.",
+  "ngay_tham_chieu": "2026-11-27",
+  "dat_cho": {
+    "TRV-7Q2K": {"chuyen_goc": "BM101", "hanh_khach": [{"loai": "nguoi_lon"}, {"loai": "nguoi_lon"}, {"loai": "tre_em", "tuoi": 5}]},
+    "TRV-3HXP": {"chuyen_goc": "BM211", "hanh_khach": [{"loai": "nguoi_lon"}, {"loai": "nguoi_lon"}, {"loai": "tre_em", "tuoi": 4}, {"loai": "tre_em", "tuoi": 7}]},
+    "TRV-6TFA": {"chuyen_goc": "BM141", "hanh_khach": [{"loai": "nguoi_lon"}, {"loai": "nguoi_lon"}, {"loai": "tre_em", "tuoi": 3}, {"loai": "tre_em", "tuoi": 8}]},
+    "TRV-9M4D": {"chuyen_goc": "BM311", "hanh_khach": [{"loai": "nguoi_lon"}, {"loai": "tre_em", "tuoi": 3}]},
+    "TRV-4DLX": {"chuyen_goc": "BM151", "hanh_khach": [{"loai": "nguoi_lon"}, {"loai": "nguoi_lon"}, {"loai": "tre_em", "tuoi": 6}]},
+    "TRV-8WQZ": {"chuyen_goc": "BM131", "hanh_khach": [{"loai": "nguoi_lon"}, {"loai": "nguoi_lon"}, {"loai": "nguoi_lon"}, {"loai": "nguoi_lon"}, {"loai": "nguoi_lon"}, {"loai": "nguoi_lon"}, {"loai": "tre_em", "tuoi": 4}, {"loai": "tre_em", "tuoi": 6}, {"loai": "tre_em", "tuoi": 9}, {"loai": "tre_em", "tuoi": 11}]},
+    "TRV-2RBC": {"chuyen_goc": "BM121", "tre_di_mot_minh": true, "hanh_khach": [{"loai": "tre_em", "tuoi": 9}]},
+    "TRV-5KLN": {"chuyen_goc": "BM411", "hanh_khach": [{"loai": "nguoi_lon"}, {"loai": "nguoi_lon"}]}
+  },
+  "chuyen_bay": [
+    {"ma": "BM101", "di": "HAN", "den": "SGN", "ngay": "2026-11-27", "gio_di": "19:00", "gio_den": "21:10", "trang_thai": "huy", "ly_do_huy": null, "con_ghe": 0},
+    {"ma": "BM121", "di": "HAN", "den": "SGN", "ngay": "2026-11-27", "gio_di": "14:00", "gio_den": "16:10", "trang_thai": "huy", "ly_do_huy": null, "con_ghe": 0},
+    {"ma": "BM131", "di": "HAN", "den": "SGN", "ngay": "2026-11-27", "gio_di": "20:30", "gio_den": "22:40", "trang_thai": "huy", "ly_do_huy": null, "con_ghe": 0},
+    {"ma": "BM103", "di": "HAN", "den": "SGN", "ngay": "2026-11-28", "gio_di": "06:00", "gio_den": "08:10", "trang_thai": "dung_gio", "con_ghe": 2},
+    {"ma": "BM109", "di": "HAN", "den": "SGN", "ngay": "2026-11-28", "gio_di": "07:15", "gio_den": "09:25", "trang_thai": "dung_gio", "con_ghe": null},
+    {"ma": "BM105", "di": "HAN", "den": "SGN", "ngay": "2026-11-28", "gio_di": "09:30", "gio_den": "11:40", "trang_thai": "dung_gio", "con_ghe": 5},
+    {"ma": "BM107", "di": "HAN", "den": "SGN", "ngay": "2026-11-28", "gio_di": "16:00", "gio_den": "18:15", "trang_thai": "dung_gio", "con_ghe": 9},
+
+    {"ma": "BM141", "di": "SGN", "den": "HAN", "ngay": "2026-11-27", "gio_di": "18:00", "gio_den": "20:10", "trang_thai": "huy", "ly_do_huy": null, "con_ghe": 0},
+    {"ma": "BM143", "di": "SGN", "den": "HAN", "ngay": "2026-11-28", "gio_di": "06:30", "gio_den": "08:40", "trang_thai": "huy", "ly_do_huy": null, "con_ghe": 7},
+    {"ma": "BM145", "di": "SGN", "den": "HAN", "ngay": "2026-11-28", "gio_di": "10:00", "gio_den": "12:10", "trang_thai": "dung_gio", "con_ghe": 4},
+    {"ma": "BM147", "di": "SGN", "den": "HAN", "ngay": "2026-11-28", "gio_di": "14:00", "gio_den": "16:10", "trang_thai": "dung_gio", "con_ghe": 8},
+
+    {"ma": "BM211", "di": "DAD", "den": "HAN", "ngay": "2026-11-27", "gio_di": "17:00", "gio_den": "18:20", "trang_thai": "huy", "ly_do_huy": "thoi_tiet", "con_ghe": 0},
+    {"ma": "BM201", "di": "DAD", "den": "HAN", "ngay": "2026-11-28", "gio_di": "07:00", "gio_den": "08:20", "trang_thai": "dung_gio", "con_ghe": 0},
+    {"ma": "BM203", "di": "DAD", "den": "HAN", "ngay": "2026-11-28", "gio_di": "13:00", "gio_den": "14:20", "trang_thai": "dung_gio", "con_ghe": 4},
+    {"ma": "BM205", "di": "DAD", "den": "HAN", "ngay": "2026-11-28", "gio_di": "19:00", "gio_den": "20:20", "trang_thai": "dung_gio", "con_ghe": 6},
+
+    {"ma": "BM311", "di": "SGN", "den": "PQC", "ngay": "2026-11-27", "gio_di": "15:00", "gio_den": "16:00", "trang_thai": "huy", "ly_do_huy": null, "con_ghe": 0},
+    {"ma": "BM303", "di": "SGN", "den": "PQC", "ngay": "2026-11-28", "gio_di": "15:00", "gio_den": "16:00", "trang_thai": "dung_gio", "con_ghe": null},
+    {"ma": "BM305", "di": "SGN", "den": "PQC", "ngay": "2026-11-29", "gio_di": "08:00", "gio_den": "09:00", "trang_thai": "dung_gio", "con_ghe": 6},
+
+    {"ma": "BM151", "di": "HAN", "den": "DLI", "ngay": "2026-11-27", "gio_di": "16:00", "gio_den": "17:45", "trang_thai": "huy", "ly_do_huy": null, "con_ghe": 0},
+    {"ma": "BM153", "di": "HAN", "den": "DLI", "ngay": "2026-11-28", "gio_di": "09:00", "gio_den": "10:45", "trang_thai": "dung_gio", "con_ghe": 1},
+    {"ma": "BM171", "di": "HAN", "den": "CXR", "ngay": "2026-11-28", "gio_di": "08:30", "gio_den": "10:15", "trang_thai": "dung_gio", "con_ghe": 5},
+
+    {"ma": "BM411", "di": "HAN", "den": "DAD", "ngay": "2026-11-28", "gio_di": "08:00", "gio_den": "09:20", "trang_thai": "dung_gio", "con_ghe": 12}
+  ],
+  "san_bay": {"HAN": "Hà Nội (Nội Bài)", "SGN": "TP.HCM (Tân Sơn Nhất)", "DAD": "Đà Nẵng", "PQC": "Phú Quốc", "DLI": "Đà Lạt (Liên Khương)", "CXR": "Cam Ranh (Khánh Hoà)"}
+}
