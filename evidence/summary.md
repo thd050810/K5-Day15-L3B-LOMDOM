@@ -4,9 +4,9 @@
 
 | Nguồn | Tiến độ | Tài liệu |
 |---|---|---|
-| Đào dữ liệu công khai | Đã mã hoá 20 review Porter Airlines trên một trang Trustpilot, có cách đếm chạy lại và các ví dụ ngoài mẫu | [Cách đếm và nguồn](data-mining.md) · [Bảng mã hoá](c3-reviews.csv) |
+| Đào dữ liệu công khai | Đã mã hoá 20 review Porter Airlines trên một trang Trustpilot, có cách đếm chạy lại và các ví dụ ngoài mẫu | [Cách đếm và nguồn](data-mining.md) · [Bảng mã hoá](c3-reviews.csv) · [Bảng trích xuất 25 bản ghi](c3-public-cases.csv) |
 | Phỏng vấn | Chưa có biên bản hoặc lịch hẹn được ghi nhận | [Mẫu phỏng vấn](interviews/TEMPLATE.md) |
-| Khảo sát | Đã soạn bộ câu hỏi, chưa ghi nhận phản hồi thật | [Bản nháp câu hỏi](survey/questions-C3.md) |
+| Khảo sát | Đã có tệp CSV trong repo. Chưa đối chiếu bản xuất form gốc và điều kiện sàng lọc | [Bộ câu hỏi](survey/questions-C3.md) · [Tệp CSV hiện có](survey/results.csv) |
 
 ## 2. Số chính
 

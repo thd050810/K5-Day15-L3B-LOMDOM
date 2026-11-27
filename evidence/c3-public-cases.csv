@@ -1,0 +1,26 @@
+﻿id,nhom_du_lieu,loai_nguon,id_mau_porter,url,hanh_trinh,chuyen_bi_huy,co_tre_nho,so_nguoi,kenh_xu_ly,tro_ngai,ket_qua,tom_tat
+PORTER-01,mau_porter,review_cong_khai,1,https://au.trustpilot.com/reviews/69bd6c3cf16d74a36ce82fb1,,,,,,,,Khách tự lỡ chuyến và được xếp chuyến ngày hôm sau
+PORTER-02,mau_porter,review_cong_khai,2,https://au.trustpilot.com/reviews/69b8570e0813de785b7a62fd,,,,,,,,Khen chất lượng hỗ trợ và đổi chuyến nói chung
+PORTER-03,mau_porter,review_cong_khai,3,https://au.trustpilot.com/reviews/69b7470f493ef93ce9f420cf,,,,,,,,Phàn nàn chung về dịch vụ
+PORTER-04,mau_porter,review_cong_khai,4,https://au.trustpilot.com/reviews/69b616df7621462bba9fca5b,,,,,,,,Khen tiếp viên hỗ trợ khách đi với trẻ nhỏ
+PORTER-05,mau_porter,review_cong_khai,5,https://au.trustpilot.com/reviews/69b0ae85dd3cf7fedbc67c84,,,,,,,,Tiêu đề nhắc hủy nhưng nội dung chỉ nêu chậm và đổi máy bay
+PORTER-06,mau_porter,review_cong_khai,6,https://au.trustpilot.com/reviews/69b004cb881287db3840c22a,,,,,,,,Phàn nàn về tiếp viên
+PORTER-07,mau_porter,review_cong_khai,7,https://au.trustpilot.com/reviews/69a9ec2d1507543a7194400b,,,,,,,,Khách tự hủy do sức khỏe và phàn nàn tín dụng du lịch hết hạn
+PORTER-08,mau_porter,review_cong_khai,8,https://au.trustpilot.com/reviews/69a857dfe5d2f235bbf85774,Quốc tế,Có,,,,Chuyến được xếp lại sau 96 giờ cũng bị huỷ,Không thực hiện được chuyến đi,Chuyến bị hủy sát giờ; phương án sau 96 giờ cũng bị hủy
+PORTER-09,mau_porter,review_cong_khai,9,https://au.trustpilot.com/reviews/69a80f1499de5310c9d21d35,,,,,,,,Phàn nàn về hoàn chi phí taxi sau đổi hành trình
+PORTER-10,mau_porter,review_cong_khai,10,https://au.trustpilot.com/reviews/69a702e219940c1915326c65,,,,,,,,Bị dời sang ngày sau mà không có thông báo; không nêu hủy chuyến
+PORTER-11,mau_porter,review_cong_khai,11,https://au.trustpilot.com/reviews/69a51bdd3f0f670b65ec5d6b,,Có,,,,Chờ 21 giờ tại sân bay trong đợt huỷ và hoãn,Đến nơi sau khi đã lỡ việc,Chờ 21 giờ tại sân bay trong đợt hủy và hoãn; bị lỡ việc
+PORTER-12,mau_porter,review_cong_khai,12,https://au.trustpilot.com/reviews/69a44beca66d81efd0f8b587,,,,,,,,"Chuyến bị chậm 2,5 giờ"
+PORTER-13,mau_porter,review_cong_khai,13,https://au.trustpilot.com/reviews/69a269b5a5d9ba56a12960ae,,,,,,,,Khen dịch vụ trên chuyến
+PORTER-14,mau_porter,review_cong_khai,14,https://au.trustpilot.com/reviews/699f06390d72789e36d5dd1d,,,,,,,,Khiếu nại về ứng xử lúc xuống máy bay
+PORTER-15,mau_porter,review_cong_khai,15,https://au.trustpilot.com/reviews/699cee74f30e3d5ae8853821,,,,,,,,Phàn nàn nhiều chuyến thường xuyên trễ
+PORTER-16,mau_porter,review_cong_khai,16,https://au.trustpilot.com/reviews/699c6df7ea84ab09a7d12020,,,,,,,,Bị trễ và không đến nơi đúng giờ
+PORTER-17,mau_porter,review_cong_khai,17,https://au.trustpilot.com/reviews/6998bd781e40645d961c2380,,,,,,,,Phàn nàn về giá và gói hành lý
+PORTER-18,mau_porter,review_cong_khai,18,https://au.trustpilot.com/reviews/698e32a6541f7a886544e110,,,,,,,,Vé qua trung gian không hợp lệ; khách mua lại để đi cùng chuyến
+PORTER-19,mau_porter,review_cong_khai,19,https://au.trustpilot.com/reviews/698b9d601e02fcd7468f0876,,,,,,,,Khen chỗ ngồi và đồ ăn
+PORTER-20,mau_porter,review_cong_khai,20,https://au.trustpilot.com/reviews/6988c5ecb61e00c9d8d0e2c4,Quốc tế,Có,,,Liên hệ hỗ trợ,Phương án thay thế hạ cánh ở sân bay khác,Bay đến Hamilton và tự trả thêm 165 đô la tiền xe theo review,Sau khi hủy phải nhờ hỗ trợ để bay đến sân bay khác và tự trả thêm tiền xe
+BO-SUNG-01,ngoai_mau,bai_bao,,https://tuoitre.vn/se-cong-khai-ly-do-cham-huy-chuyen-bay-622561.htm,Nội địa Việt Nam,Có,,10,Hỏi nhân viên và đến quầy vé,Chuyến về Vinh được gợi ý đã hết vé tại quầy,"Hành trình kéo dài thêm một ngày, phát sinh hơn 2,5 triệu đồng theo bài báo",Gia đình 10 người bị huỷ chuyến đi Thanh Hoá. Nhân viên gợi ý các phương án bay đến sân bay khác rồi đi đường bộ.
+BO-SUNG-02,ngoai_mau,bai_bao,,https://tuoitre.vn/se-cong-khai-ly-do-cham-huy-chuyen-bay-622561.htm,Nội địa Việt Nam,Có,,,Nhận thông báo của hãng qua SMS,Chuyến thay thế khởi hành từ Hà Nội thay vì Hải Phòng,Hành khách đi đường bộ lên Hà Nội từ sáng sớm để kịp chuyến,Hãng thông báo huỷ chuyến Hải Phòng đi TP.HCM một ngày trước giờ khởi hành và sắp xếp chuyến đi từ Hà Nội.
+BO-SUNG-03,ngoai_mau,review_cong_khai,,https://airadvisor.com/en/airline-complaints/american-airlines/comments/page/5,Quốc tế,Có,Có,3,Website hãng bay,"Không có phương án tự động sau tin huỷ, chuyến sớm nhất còn đặt được cách hai ngày",Gia đình tự đổi vé và đến nơi muộn 48 giờ so với lịch ban đầu,Gia đình có trẻ nhỏ đi từ New York đến Buenos Aires. Tính một ca dù trang có đăng lặp nội dung.
+BO-SUNG-04,ngoai_mau,review_cong_khai,,https://www.trustpilot.com/review/www.ita-airways.com?page=6,,Có,,2,Liên hệ bộ phận hỗ trợ,Hai khách được xếp sang các chuyến về khác nhau,Người tổ chức cho biết đã phải liên hệ hỗ trợ ít nhất năm lần,Review ITA Airways hiển thị ngày 26/06/2026 kể việc huỷ chuyến của hai khách dự một khoá học.
+BO-SUNG-05,ngoai_mau,bai_bao,,https://tuoitre.vn/du-khach-viet-chay-dua-thoat-khoi-vung-chien-su-ve-may-bay-tang-tung-gio-20260305225348807.htm,Quốc tế,Có,,1,Tổng đài và hỗ trợ trực tuyến,"Phương án đầu yêu cầu đổi sân bay quá cảnh, nhiều lần liên hệ hãng để tìm phương án khác",Hãng khai thác chặng đầu xác nhận vé mới và khách đã về Việt Nam,Người thân tìm chuyến thay thế trong ba ngày cho một hành khách bay từ Phần Lan về Hà Nội.
