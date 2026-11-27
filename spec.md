@@ -12,28 +12,27 @@ Data BTC cấp đã dùng (nếu có — không commit nguyên file): __
 
 ## §1. Người dùng & bằng chứng *(guide 1.1, 1.2)*
 - Người dùng chính (một vai cụ thể): Hành khách đặt vé nội địa qua app, đi cùng con nhỏ, vừa nhận thông báo chuyến bay bị huỷ.
-- Việc họ cố làm xong (`động từ + đối tượng + bối cảnh`, không có chữ AI): đổi hoặc hoàn vé để cả nhà vẫn đi kịp (hoặc lấy lại tiền) khi chuyến bay vừa bị huỷ.
-- Hôm nay họ giải bằng gì, hỏng ở đâu, vì sao chưa bỏ:
-- Pain (KHÔNG chữ AI): ai — đang làm gì — vướng đâu — hậu quả gì: Hành khách đi cùng con nhỏ vừa bị huỷ chuyến, đang tự đổi hoặc hoàn vé trên app, vướng vì không rõ nên chọn chuyến nào và thao tác nào không quay lại được, hậu quả là hết chỗ chuyến kịp giờ, hoặc mất lượt đổi miễn phí hay tiền vé.
-- Bằng chứng — số chính + kết luận (chi tiết: `evidence/summary.md`): __
+- Việc họ cố làm xong: tìm một chuyến nội địa thay thế sau khi chuyến cũ bị huỷ để cả nhà bay cùng chuyến và đến kịp giờ.
+- Hôm nay họ tự tìm trên app hoặc liên hệ nhân viên. Các ca công khai ghi nhận phương án rất muộn, chuyến thay thế lại bị huỷ hoặc phải đến sân bay khác. [Ví dụ có nguồn](evidence/data-mining.md)
+- Pain: hành khách đi cùng con nhỏ khó biết chuyến thay thế nào đến kịp và còn đủ chỗ cho cả nhà, nên có thể phải chờ thêm hoặc đi tách chuyến.
+- Bằng chứng: 3/20 review Porter (15%) nêu trở ngại với chuyến thay thế sau huỷ, 0/20 nêu rõ thiếu chỗ hoặc tách nhóm. Các ca công khai ngoài mẫu minh hoạ hệ quả. Chưa đo được tần suất trong nhóm gia đình đi chuyến nội địa tại Việt Nam. [Tổng hợp](evidence/summary.md)
 
 ## §2. Impact & quyết định chọn *(guide 1.3)*
 
-| Hướng | Bao nhiêu người gặp | Bao nhiêu lần / tháng | Mỗi lần tốn gì | Impact / tháng | Làm kịp không | Chọn? |
-|---|---|---|---|---|---|---|
-|  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |
+| Hướng | Tác động quan sát được | Làm kịp không | Chọn? |
+|---|---|---|---|
+| Gợi ý chuyến thay thế đến kịp, đủ chỗ | 3/20 review nêu trở ngại khi tìm chuyến thay thế. Một ca ngoài mẫu kể chuyến đi kéo dài thêm một ngày và phát sinh hơn 2,5 triệu đồng. | Có thể dựng luồng tra cứu bằng dữ liệu mẫu. | Có |
+| Tự giữ chỗ hoặc đổi vé | Chưa đo tác động riêng. Thao tác cần xác nhận chuyến và hành khách. | Cần quyền thao tác đặt chỗ và kiểm tra lại tồn chỗ. | Loại |
+| Hỗ trợ hoàn vé | Chưa có số riêng về thời gian xử lý hoàn vé của nhóm người dùng này. | Cần dữ liệu chính sách và trạng thái hoàn vé. | Loại |
 
-- **Impact / tháng** của hướng chọn = __ người × __ lần × __ phút = __ — nguồn từng thừa số: __ (không có nguồn thì ghi rõ *(tự ước tính)*)
-- Hướng ĐÃ LOẠI + vì sao (giữ lại, đừng xoá):
-- Số lần / tháng của từng kiểu người dùng (dùng cho persona ở §8):
+- **Impact / tháng:** chưa đủ dữ liệu để tính số gia đình × số lần gặp / tháng × số phút xử lý mỗi lần. Các ca công khai cho biết thời gian đến muộn hoặc chi phí phát sinh trong từng trường hợp. Thời gian tự tìm chuyến và tần suất ở người dùng mục tiêu cần đo riêng.
+- Tần suất theo persona: chưa đo. [Nguồn số liệu và ca minh hoạ](evidence/data-mining.md)
 
 ## §3. Giải pháp tương tự *(guide 2.1)*
 - [sản phẩm / tính năng gần giống]: một điều đáng học · một điều đáng né · mình khác gì
 
 ## §4. Thiết kế *(guide 2.2, 3.2)*
-- **Lát cắt MỘT CÂU** (1 người dùng · 1 việc · 1 quyết định AI · 1 kết quả): Một hành khách đi cùng con nhỏ vừa bị huỷ chuyến nhắn yêu cầu đổi hoặc hoàn vé, AI quyết định giữ chỗ, hỏi lại, đổi vé, gửi hoàn hay chuyển nhân viên, để hành khách có chỗ trên chuyến kịp đi mà không mất vé hay tiền ngoài ý muốn.
+- **Lát cắt MỘT CÂU** (1 người dùng · 1 việc · 1 quyết định AI · 1 kết quả): Khi hành khách đi cùng con nhỏ cần tìm chuyến thay thế sau khi chuyến nội địa bị huỷ, AI chọn một chuyến đến trước giờ khách cần và còn đủ chỗ cho cả nhà để khách có một phương án đổi vé.
 - Không làm (≥3 điều):
 - **Sơ đồ** (ảnh / Mermaid / draw.io): [chèn ở đây]
 - **Hình dạng:** [ ] workflow cố định · [ ] một agent · [ ] nhiều agent — 2 dòng lý do, và vì sao **không** chọn hình dạng phức tạp hơn:
