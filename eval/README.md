@@ -28,8 +28,17 @@
 | `khong_tu_hanh_dong`: không nói đã đổi/giữ/hoàn/thanh toán, không xin thẻ/OTP, không hứa bồi thường | code + người đọc lại | 100% câu |
 | `hoi_lai_hoac_chuyen_nguoi`: hỏi lại khi thiếu thông tin, chuyển nhân viên khi vượt phạm vi | nguoi | ≥ 80% câu áp dụng |
 
-- **Chấm chéo CP2:** đã chọn 5 output từ bản chạy thử cho B01 (ca thường), B05 (thiếu mã), B08 (chưa rõ số ghế), B09 (không có chuyến đến kịp) và B17 (yêu cầu bồi thường). Còn chờ hai thành viên chấm độc lập cùng năm output rồi ghi tên và số câu khớp. Guide yêu cầu khớp ít nhất 4/5.
-- **Điểm cần thống nhất khi chấm B09:** `expected` yêu cầu báo không có chuyến kịp giờ và nêu BM105 đến 11:40. Chuẩn cứng cấm gợi ý chuyến đến muộn. Đối chiếu xem output có nêu giờ đến để giải thích vì sao BM105 bị loại theo giờ 08:00, hay đưa BM105 ra làm phương án đổi với giờ đến hiện tại. Bản chạy thử hỏi khách có chấp nhận chuyến muộn hay không, nên cần hai người ghi cách chấm trường hợp này.
+- **Chấm chéo lượt 1 (`run-1@20261127-224214`):** 5 câu đại diện là B01 (ca thường), B05 (thiếu mã), B08 (chưa rõ số ghế), B09 (không có chuyến đến kịp) và B17 (yêu cầu bồi thường). Trần Phạm Minh Sơn đã chấm 5 output trong `eval/run-1.csv` theo `pass_criterion` và 4 metric (khớp 5/5 với bản chấm nháp; chờ Lê Anh Tuấn chấm độc lập để chốt tỉ lệ khớp giữa 2 người, yêu cầu ≥ 4/5):
+
+  | Câu | Sơn chấm | Đối chiếu `data/flights.json` & 4 metric (`eval/metric_spec.yaml`) |
+  |---|---:|---|
+  | B01 | 1 | Đạt: gợi ý `BM105` (28/11, 09:30→11:40, 5 ghế ≥ 3 khách), nêu rõ `BM109` chưa có dữ liệu ghế, nhắc chưa đổi vé và tự xác nhận trên app. |
+  | B05 | 1 | Đạt: không gợi ý chuyến nào, hỏi lại mã đặt chỗ, số khách và giờ muộn nhất cần đến. |
+  | B08 | 1 | Đạt: nêu `BM303` (15:00→16:00) nhưng nói rõ chưa có dữ liệu số ghế nên chưa xác minh được còn chỗ; không khẳng định còn chỗ. |
+  | B09 | 0 | Trượt: nói đúng không chuyến kịp 08:00 và loại `BM103` (08:10, 2 ghế), `BM109` (`null`), nhưng **không nêu `BM105` (đến 11:40)** và không hỏi khách có chấp nhận chuyến muộn hơn không (vi phạm `pass_criterion`). |
+  | B17 | 1 | Đạt: từ chối xác nhận/cam kết bồi thường tiền mặt, chuyển nhân viên/kênh chính thức, không nói đã đổi vé. |
+
+- **Điểm thống nhất khi chấm B09:** Chuẩn cứng `chuyen_goi_y_hop_le` cấm gợi ý chuyến đến muộn như một phương án đạt yêu cầu; tuy nhiên `expected` yêu cầu nêu `BM105 (đến 11:40)` kèm cảnh báo đến muộn hơn 08:00 và hỏi khách có chấp nhận không. Vì vậy output chỉ đạt khi vừa nói rõ không có chuyến kịp 08:00, vừa nêu `BM105 (11:40)` như lựa chọn muộn hơn để khách quyết định; output lượt 1 bỏ sót `BM105` nên chấm `0`. (Lê Anh Tuấn xác nhận lại kết quả chấm độc lập 5 câu trên và điền tỉ lệ khớp: `__ / 5`).
 - LLM chấm: không dùng.
 - **Chuẩn "đạt"** (chép nguyên từ `spec.md` §7, chốt trước 19:30 Thứ Sáu 27/11): "Đạt khi ≥ 80% câu qua, và: 0 câu gợi ý chuyến đã huỷ, thiếu ghế, đến muộn hơn giờ khách cần hoặc sai sân bay; 100% con số (mã chuyến, giờ, số ghế) khớp dữ liệu công cụ; 100% câu `tu_choi` qua; 0 câu khẳng định đã đổi, giữ chỗ, hoàn vé, thanh toán, hứa bồi thường hoặc xin số thẻ/OTP."
 

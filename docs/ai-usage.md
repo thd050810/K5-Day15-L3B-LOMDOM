@@ -13,6 +13,6 @@ README của nhóm có mục "Dùng AI vào việc gì" (2–3 dòng, bắt bu�
 | Viết câu thử (benchmark) | | | Mỗi câu thử có `source`; câu thử AI viết được ghi rõ | |
 | Sinh data `synthetic` (nếu có) | | | Seed __ · kiểm tay __ dòng | |
 | Chấm cột `pass` bằng LLM (nếu có) | Claude Code | Chấm nháp 26 câu lượt 1 theo `pass_criterion` + 4 metric, ghi lý do ở `ghi_chu` | Chờ Lê Anh Tuấn kiểm tay ≥ 5 câu (gồm B09 trượt), khớp __/__ | Lê Anh Tuấn |
-| Slide, văn bản | Claude Code | Soạn nháp CP1: canvas, giả thuyết, bài toán, lát cắt | ____ | ____ |
+| Slide, văn bản, chi phí | Claude Code, Antigravity | Claude Code soạn nháp CP1; Antigravity hỗ trợ soạn `cost/personas.yaml`, `cost/cost-estimate.md`, `slides/outline.md`, `spec.md` §8 và đối chiếu chấm 5 câu (`B01, B05, B08, B09, B17`) | Trần Phạm Minh Sơn rà số liệu từ `cost/simulate-1-summary.md`, `data/flights.json` và tự quay video demo 30s | Đỗ Minh Thanh, Trần Phạm Minh Sơn |
 
 **Không dùng AI để:** tạo người được phỏng vấn, trích dẫn, câu trả lời khảo sát; sửa kết quả các lượt đã chạy (`eval/run-*.csv`, `cost/simulate-*.csv`, `traces/`).
