@@ -19,11 +19,13 @@
 | Ca | Trích dẫn hoặc hệ quả |
 |---|---|
 | Review #8 trong mẫu | “rebooked on another flight 96 hours later”. Chuyến thay thế cũng bị huỷ. [Trustpilot, trang mẫu Porter](https://au.trustpilot.com/review/flyporter.com?page=7) |
-| Review #20 trong mẫu | “get on a flight to Hamilton”. Khách kể phát sinh 165 đô la tiền xe. [Trang mẫu Trustpilot](https://au.trustpilot.com/review/flyporter.com?page=7) |
+| Review #20 trong mẫu | “get on a flight to Hamilton”. Khách kể tốn “165 bucks” đi Uber về nhà lúc 3 giờ sáng. [Trang mẫu Trustpilot](https://au.trustpilot.com/review/flyporter.com?page=7) |
 | Nhóm 10 người tại Việt Nam, ngoài mẫu | “nhân viên ở đây cho biết đã hết vé”. Theo bài báo, đoàn đi muộn thêm một ngày và phát sinh hơn 2,5 triệu đồng. [Tuổi Trẻ](https://tuoitre.vn/se-cong-khai-ly-do-cham-huy-chuyen-bay-622561.htm) |
 | Review #11 trong mẫu | “I spent 21 hours sitting in Halifax airport”. Khách kể đã lỡ việc sau đợt huỷ và hoãn chuyến. [Trustpilot, trang mẫu Porter](https://au.trustpilot.com/review/flyporter.com?page=7) |
-| Gia đình có trẻ nhỏ, ngoài mẫu | “I had to manually rebook our flights through the AA website”. Khách kể đến nơi muộn 48 giờ. [AirAdvisor](https://airadvisor.com/en-us/airline-complaints/american-airlines/comments/page/5) |
+| Gia đình có trẻ nhỏ, ngoài mẫu | **Chưa đối chiếu lại được (23:10 27/11):** câu “I had to manually rebook our flights through the AA website” và chi tiết muộn 48 giờ không còn trên trang 5 (trang phân theo bình luận mới nên có thể đã trôi). Không dùng ca này làm bằng chứng cho tới khi tìm lại được link gốc. [AirAdvisor](https://airadvisor.com/en-us/airline-complaints/american-airlines/comments/page/5) |
 | Người thân đổi vé từ Phần Lan, ngoài mẫu | “Ba ngày gần như chỉ lo tìm đường bay cho mẹ.” Người thân xác nhận được vé mới khi liên hệ hãng khai thác chặng đầu. [Tuổi Trẻ](https://tuoitre.vn/du-khach-viet-chay-dua-thoat-khoi-vung-chien-su-ve-may-bay-tang-tung-gio-20260305225348807.htm) |
+
+Đối chiếu ngày 27/11/2026 (23:10): 5/6 trích dẫn khớp nguyên văn trên trang. Ca AirAdvisor chưa đối chiếu lại được (xem bảng).
 
 ## 4. Kết luận
 

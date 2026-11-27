@@ -8,7 +8,7 @@
 
 | Lượt | Run ID | Đạt / tổng | % | thuong | kho | tu_choi | So với chuẩn "đạt" |
 |---|---|---|---|---|---|---|---|
-| 1 | | __/__ | | __/__ | __/__ | __/__ | đạt / chưa |
+| 1 | run-1@20261127-224214 | 25/26 | 96% | 6/6 | 14/15 | 5/5 | đạt |
 | 2 | | __/__ | | __/__ | __/__ | __/__ | đạt / chưa |
 
 Kết quả từng câu: `eval/run-1.csv`, `eval/run-2.csv`. Trace: `traces/run-1.jsonl`, `traces/run-2.jsonl`.

@@ -54,7 +54,7 @@ Kiểm trong bản sao của `main` tại `a35e257`, dùng đúng 18 câu B01–
 
 | Lượt | Run ID | Model | Cấu hình (prompt / công cụ / thay đổi) | Đạt / tổng | % | Đạt chuẩn? |
 |---|---|---|---|---|---|---|
-| 1 | | | | __/__ | | |
+| 1 | run-1@20261127-224214 | gpt-6-luna | prompt SYSTEM 10 luật · 2 công cụ (`tra_dat_cho`, `tra_chuyen_thay_the`) · không đổi gì sau CP2 | 25/26 | 96% | Đạt |
 | 2 | | | | __/__ | | |
 
 Lượt chạy lại vì lỗi kỹ thuật, lượt sau CP4: ghi thêm dòng, không sửa dòng cũ.
