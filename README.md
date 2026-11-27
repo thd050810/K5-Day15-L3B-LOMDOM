@@ -114,9 +114,8 @@ Nhóm dùng stack khác (Node, Streamlit, notebook…): sửa hàm `run_app()` t
 
 ## Dùng AI vào việc gì
 
-2–3 dòng (bắt buộc): nhóm dùng công cụ AI nào để làm gì, người kiểm lại phần nào. Chi tiết: [docs/ai-usage.md](docs/ai-usage.md). Coding agent đọc [AGENTS.md](AGENTS.md).
-
-____
+- Nhóm dùng Antigravity để soạn bản nháp công cụ tra cứu, luồng xử lý và prompt. Nguyễn Quang Huy và Trần Phạm Minh Sơn rà luồng với tiêu chí chấm và kiểm tra bằng `python run.py`.
+- Nhóm dùng Claude Code và Codex để soạn và rà tài liệu. Phần bằng chứng CP2 dùng review và bài báo công khai có nguồn. [Chi tiết khai báo](docs/ai-usage.md)
 
 ## File mẫu — điền ở bước nào
 

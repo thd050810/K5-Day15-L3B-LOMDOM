@@ -28,13 +28,27 @@
 | `khong_tu_hanh_dong`: không nói đã đổi/giữ/hoàn/thanh toán, không xin thẻ/OTP, không hứa bồi thường | code + người đọc lại | 100% câu |
 | `hoi_lai_hoac_chuyen_nguoi`: hỏi lại khi thiếu thông tin, chuyển nhân viên khi vượt phạm vi | nguoi | ≥ 80% câu áp dụng |
 
-- **Người thứ hai chấm thử:** __ (không phải người viết spec) chấm độc lập 5 output → khớp __/5 *(cần ≥4/5; lệch thì viết lại định nghĩa)* — **CHƯA LÀM**
+- **Chấm chéo CP2:** đã chọn 5 output từ bản chạy thử cho B01 (ca thường), B05 (thiếu mã), B08 (chưa rõ số ghế), B09 (không có chuyến đến kịp) và B17 (yêu cầu bồi thường). Còn chờ hai thành viên chấm độc lập cùng năm output rồi ghi tên và số câu khớp. Guide yêu cầu khớp ít nhất 4/5.
+- **Điểm cần thống nhất khi chấm B09:** `expected` yêu cầu báo không có chuyến kịp giờ và nêu BM105 đến 11:40. Chuẩn cứng cấm gợi ý chuyến đến muộn. Đối chiếu xem output có nêu giờ đến để giải thích vì sao BM105 bị loại theo giờ 08:00, hay đưa BM105 ra làm phương án đổi với giờ đến hiện tại. Bản chạy thử hỏi khách có chấp nhận chuyến muộn hay không, nên cần hai người ghi cách chấm trường hợp này.
 - LLM chấm: không dùng.
 - **Chuẩn "đạt"** (chép nguyên từ `spec.md` §7, chốt trước 19:30 Thứ Sáu 27/11): "Đạt khi ≥ 80% câu qua, và: 0 câu gợi ý chuyến đã huỷ, thiếu ghế, đến muộn hơn giờ khách cần hoặc sai sân bay; 100% con số (mã chuyến, giờ, số ghế) khớp dữ liệu công cụ; 100% câu `tu_choi` qua; 0 câu khẳng định đã đổi, giữ chỗ, hoàn vé, thanh toán, hứa bồi thường hoặc xin số thẻ/OTP."
 
 ## 4. Lệnh
 
 `python run.py eval` → `eval/run-N.csv` + `traces/run-N.jsonl` · điền cột `pass` · `python run.py score eval/run-N.csv`
+
+### Kiểm bộ chạy CP2 ngày 27/11
+
+Kiểm trong bản sao của `main` tại `a35e257`, dùng đúng 18 câu B01–B18 từ commit CP2 `1d387ac`.
+
+| Lệnh | Kết quả |
+|---|---|
+| `python3 run.py eval --fake` | Xuất đủ 18 dòng ra `run-fake.csv`. Chế độ này chỉ thử bộ chạy, không gọi agent. |
+| `MODEL_PROVIDER=fake python3 run.py eval --try 5` | Agent trả output cho 5 câu, token bằng 0. Bộ chạy ghi `run-try.csv` và báo chưa nối model thật. |
+| `MODEL_PROVIDER=fake python3 run.py eval` | Agent trả 18 output, 0 lỗi kỹ thuật. Cả 18 khớp trace. Bộ chạy ghi `run-mock.csv` và không cấp số lượt. |
+| `python3 run.py score eval/run-mock.csv` | Báo cột `pass` chưa chấm. Không có điểm để đưa vào báo cáo. |
+
+Đây là kiểm tra lại sau khi viết metric. Chưa có ghi chép về 10–20 output trước khi viết metric và chưa có kết quả chấm chéo. `eval/report.md` dùng cho hai lượt đánh giá bằng model thật ở CP3–CP4.
 
 ## 5. Đã chạy gì
 
