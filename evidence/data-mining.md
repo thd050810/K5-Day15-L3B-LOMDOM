@@ -34,6 +34,12 @@ Tất cả nguồn được xem ngày 27/11/2026. Các ca tìm theo từ khóa b
 | Gia đình có trẻ nhỏ | “I had to manually rebook our flights through the AA website”. Người đăng kể gia đình tới nơi muộn 48 giờ. Hai bản đăng cùng nội dung trên trang được xem là một ca. | [AirAdvisor, American Airlines](https://airadvisor.com/en-us/airline-complaints/american-airlines/comments/page/5) |
 | Người thân đổi vé từ Phần Lan về Việt Nam | “Ba ngày gần như chỉ lo tìm đường bay cho mẹ.” Theo bài báo, vé mới cuối cùng được xác nhận sau khi liên hệ hãng khai thác chặng đầu. | [Tuổi Trẻ, 2026](https://tuoitre.vn/du-khach-viet-chay-dua-thoat-khoi-vung-chien-su-ve-may-bay-tang-tung-gio-20260305225348807.htm) |
 
+## Bảng trích xuất theo tình huống
+
+[Bảng 25 bản ghi](c3-public-cases.csv) gồm 20 review trong bảng mã hoá gốc và 5 trường hợp minh hoạ ngoài mẫu chọn theo nội dung. Cột `nhom_du_lieu` đánh dấu hai nhóm. Mỗi dòng có URL nguồn. Hai trường hợp khác nhau từ cùng một bài báo được ghi hai dòng. Những gì nguồn không nêu rõ để trống, kể cả số người, trẻ nhỏ, hành trình và cách xử lý.
+
+Chỉ dùng 20 dòng `mau_porter` để tính các tỷ lệ trên. Năm dòng `ngoai_mau` minh hoạ các trở ngại như thiếu chỗ, phải đổi sân bay, tách nhóm và tự đổi vé. Bảng này là dữ liệu trích từ nguồn công khai. Số người trả lời khảo sát được tính riêng từ bản xuất form sau khi đối chiếu nguồn và điều kiện sàng lọc.
+
 ## Kết luận cho C3
 
 Mẫu review cho thấy khó khăn khi tìm phương án thay thế sau hủy chuyến. Các ví dụ ngoài mẫu cho thấy tình huống hết vé hoặc bị tách sang chuyến khác đã xảy ra. Mẫu gồm một trang review của một hãng quốc tế và có thiên lệch tự chọn, nên chưa ước tính được tần suất pain trong các gia đình đi máy bay tại Việt Nam. Có thể dùng ca nhóm hết vé để minh họa tác động và hỏi thêm gia đình từng bị hủy chuyến về thời gian tìm được chuyến mới, số lần liên hệ hỗ trợ và chi phí phát sinh.
