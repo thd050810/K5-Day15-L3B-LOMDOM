@@ -1,35 +1,43 @@
-# AI SPEC — Chuyến bay bị huỷ: giữ chỗ, đổi vé, hoàn vé · Nhóm LOMDOM · Phòng [XXX] · Zone [X]
+# AI SPEC — Chuyến bay bị huỷ: giữ chỗ, đổi vé, hoàn vé · Nhóm LOMDOM · Phòng làm việc L3B: C401 (27/11) · Phòng/Zone demo: chờ BTC xác nhận
 
 > Mốc nộp: §7 chốt chuẩn "đạt" tại **CP2 19:30 Thứ Sáu 27/11** · §0–§7 nộp **CP3 10:00 Thứ Bảy 28/11** · đủ §0–§10 **CP4 14:30 Thứ Bảy 28/11** · §10 changelog ghi tiếp đến **23:59 Thứ Bảy 28/11**.
 > Đầu mỗi mục ghi bước guide (`02-guide.md` trong repo đề) chỉ cách điền. Mỗi mục ngắn, có số và nguồn; chi tiết để ở file được trỏ tới. Xoá dòng hướng dẫn trong ngoặc vuông khi điền xong.
 
 Track: [ ] A · [ ] B · [x] C · [ ] D · [ ] E — bài toán: C3, chuyến bay bị huỷ: giữ chỗ, đổi vé, hoàn vé
-Data BTC cấp đã dùng (nếu có — không commit nguyên file): __
+Data BTC cấp đã dùng: không có dataset Track C. Bằng chứng lấy từ review và bài báo công khai. Bản chạy thử đọc dữ liệu chuyến bay do nhóm dựng. [Bằng chứng](evidence/summary.md) · [Data card](data/DATA_CARD.md)
 
 ## §0. Hiện tại việc này diễn ra thế nào *(guide 1.1)*
-- Luồng hiện tại của việc này, trong khoá hoặc trên app thật (3–5 bước; ảnh chụp từ tài khoản của mình, đã che thông tin):
-- Công cụ / AI đang được dùng cho việc này (nếu có) + nguồn. Không kiểm được thì ghi "chưa kiểm":
+
+1. Hành khách nhận thông báo của hãng qua SMS hoặc email rồi mở đường dẫn hướng dẫn xử lý.
+2. Trên màn hình chọn chuyến mới, khách xem phương án hãng đề xuất và kiểm các chuyến khác nếu lịch đó không phù hợp.
+3. Khách xem lại giờ bay và danh sách hành khách trong đặt chỗ trước khi xác nhận.
+4. Hệ thống xác nhận chuyến mới. Nếu phương án hiển thị chưa đáp ứng nhu cầu, khách có thể liên hệ kênh đã bán vé hoặc tổng đài để kiểm tra lựa chọn. [Luồng và ảnh minh hoạ công khai của Vietnam Airlines](https://www.vietnamairlines.com/vn/vi/buy-tickets-other-products/booking-and-manage-bookings/involuntary-rebook/eligibility-for-involuntary-flight-change/how-to-change-refund-involutarily) · [Hướng dẫn của Traveloka khi hãng huỷ chuyến](https://www.traveloka.com/vi-vn/help/flight/flight-managing-booking/flight-changes/cancellation/my-flight-is-cancelled)
+
+- Công cụ đang dùng: tính năng tự đổi chuyến của Vietnam Airlines và hướng dẫn đổi lịch trong thông báo Traveloka. Chưa kiểm được các tính năng này có dùng AI hay không. Chưa có ảnh chụp từ tài khoản hoặc đặt chỗ của nhóm. [Trợ giúp đổi chuyến của Vietnam Airlines](https://www.vietnamairlines.com/go/vi/help-desk/common-topics/Ticket-change/doi-chuyen-bay-khong-tu-nguyen-do-VNA-thay-doi-lich-bay)
 
 ## §1. Người dùng & bằng chứng *(guide 1.1, 1.2)*
 - Người dùng chính (một vai cụ thể): Hành khách đặt vé nội địa qua app, đi cùng con nhỏ, vừa nhận thông báo chuyến bay bị huỷ.
 - Việc họ cố làm xong: tìm một chuyến nội địa thay thế sau khi chuyến cũ bị huỷ để cả nhà bay cùng chuyến và đến kịp giờ.
-- Hôm nay họ tự tìm trên app hoặc liên hệ nhân viên. Các ca công khai ghi nhận phương án rất muộn, chuyến thay thế lại bị huỷ hoặc phải đến sân bay khác. [Ví dụ có nguồn](evidence/data-mining.md)
+- Hôm nay họ tự tìm trên app hoặc liên hệ nhân viên để kiểm vé cho cả nhóm trước khi xác nhận. Các ca công khai ghi nhận chuyến thay thế quá muộn, lại bị huỷ hoặc khởi hành hay hạ cánh ở sân bay khác. [Ví dụ có nguồn](evidence/data-mining.md)
 - Pain: hành khách đi cùng con nhỏ khó biết chuyến thay thế nào đến kịp và còn đủ chỗ cho cả nhà, nên có thể phải chờ thêm hoặc đi tách chuyến.
 - Bằng chứng: 3/20 review Porter (15%) nêu trở ngại với chuyến thay thế sau huỷ, 0/20 nêu rõ thiếu chỗ hoặc tách nhóm. Các ca công khai ngoài mẫu minh hoạ hệ quả. Chưa đo được tần suất trong nhóm gia đình đi chuyến nội địa tại Việt Nam. [Tổng hợp](evidence/summary.md)
 
 ## §2. Impact & quyết định chọn *(guide 1.3)*
 
-| Hướng | Tác động quan sát được | Làm kịp không | Chọn? |
-|---|---|---|---|
-| Gợi ý chuyến thay thế đến kịp, đủ chỗ | 3/20 review nêu trở ngại khi tìm chuyến thay thế. Một ca ngoài mẫu kể chuyến đi kéo dài thêm một ngày và phát sinh hơn 2,5 triệu đồng. | Có thể dựng luồng tra cứu bằng dữ liệu mẫu. | Có |
-| Tự giữ chỗ hoặc đổi vé | Chưa đo tác động riêng. Thao tác cần xác nhận chuyến và hành khách. | Cần quyền thao tác đặt chỗ và kiểm tra lại tồn chỗ. | Loại |
-| Hỗ trợ hoàn vé | Chưa có số riêng về thời gian xử lý hoàn vé của nhóm người dùng này. | Cần dữ liệu chính sách và trạng thái hoàn vé. | Loại |
+| Hướng | Số người gặp | Số lần/người/tháng | Tác động mỗi lần | Impact/tháng | Làm kịp? | Chọn? |
+|---|---|---|---|---|---|---|
+| Gợi ý chuyến đến kịp và đủ chỗ | 10 người đặt vé cho 10 gia đình *(tự ước tính cho kịch bản thử)* | 1 *(tự ước tính)* | 15–30 phút tìm và đối chiếu chuyến *(tự ước tính)* | 150–300 phút *(tự ước tính)* | Dựng được luồng tra cứu với dữ liệu mẫu | Có |
+| Tự giữ chỗ hoặc đổi vé | Chưa đo | Chưa đo | Có thể giảm thao tác, cần xác nhận đúng chuyến và hành khách | Chưa đủ dữ liệu | Cần quyền sửa đặt chỗ và kiểm tồn ghế tại thời điểm đổi | Loại |
+| Hỗ trợ hoàn vé | Chưa đo | Chưa đo | Chưa có số đo riêng về thời gian xử lý hoàn vé trong nhóm mục tiêu | Chưa đủ dữ liệu | Cần chính sách và trạng thái hoàn của từng vé | Loại |
 
-- **Impact / tháng:** chưa đủ dữ liệu để tính số gia đình × số lần gặp / tháng × số phút xử lý mỗi lần. Các ca công khai cho biết thời gian đến muộn hoặc chi phí phát sinh trong từng trường hợp. Thời gian tự tìm chuyến và tần suất ở người dùng mục tiêu cần đo riêng.
-- Tần suất theo persona: chưa đo. [Nguồn số liệu và ca minh hoạ](evidence/data-mining.md)
+- Kịch bản thử dùng **10 × 1 × 15–30 = 150–300 phút/tháng** để ước lượng thời gian hiện tại bỏ ra cho việc tìm chuyến. Ba thừa số là giả định, chưa có đo lường thời gian sản phẩm tiết kiệm hoặc quy mô sử dụng thật.
+- Chọn gợi ý chuyến vì 3/20 review có trở ngại với phương án thay thế và có thể kiểm giờ đến, sân bay, số ghế mà khách vẫn tự quyết định. Ngoài mẫu, một gia đình 10 người bị kéo dài hành trình thêm một ngày và phát sinh hơn 2,5 triệu đồng. Gia đình có trẻ nhỏ trong một ca khác đến nơi trễ 48 giờ. Đây là hệ quả từng ca, không phải số phút thao tác tìm chuyến. [Bằng chứng và giới hạn](evidence/summary.md)
+- Tần suất theo persona: chưa đo. Khi mô phỏng chi phí, gắn nhãn *(tự ước tính)* cho tần suất nếu chưa có dữ liệu phù hợp.
 
 ## §3. Giải pháp tương tự *(guide 2.1)*
-- [sản phẩm / tính năng gần giống]: một điều đáng học · một điều đáng né · mình khác gì
+- **Giải pháp tương tự:** Vietnam Airlines cho khách xem chuyến được đề xuất, chọn chuyến khác và rà lại danh sách hành khách trước khi xác nhận. [Hướng dẫn của hãng](https://www.vietnamairlines.com/vn/vi/buy-tickets-other-products/booking-and-manage-bookings/involuntary-rebook/eligibility-for-involuntary-flight-change/how-to-change-refund-involutarily)
+- **Điều đáng học:** hiển thị giờ bay và hành khách ở bước xem lại. **Điều cần tránh:** để khách phải hiểu một chuyến đang hiển thị là còn đủ ghế cho cả nhà khi chưa kiểm được tồn chỗ.
+- **Điểm khác của LOMDOM:** đối chiếu giờ cần đến và số chỗ cho cả nhóm trước khi đưa ra một phương án. Khách xác nhận đổi vé qua kênh đặt vé của mình.
 
 ## §4. Thiết kế *(guide 2.2, 3.2)*
 - **Lát cắt MỘT CÂU** (1 người dùng · 1 việc · 1 quyết định AI · 1 kết quả): Khi hành khách đi cùng con nhỏ vừa bị huỷ chuyến nội địa gửi yêu cầu đổi vé, AI tra đặt chỗ và chuyến bay để gợi ý một chuyến thay thế đến kịp giờ và đủ chỗ cho cả nhà (hoặc hỏi lại / chuyển nhân viên nếu thiếu thông tin hay vượt phạm vi), để khách tự xác nhận đổi vé đúng chuyến mà không tách gia đình hay mất tiền ngoài ý muốn.
@@ -129,7 +137,7 @@ Ca thường (đủ thông tin, có chuyến hợp lệ): B01–B04, B23, B24.
 
 ## §10. Phân công & changelog
 - Phân công có tên (theo chặng, chia cặp — guide "Cách chia việc"):
-  - TV1 ____ (đội trưởng): bằng chứng, impact, canvas, §1–§2, nộp checkpoint. TV2 ____: thiết kế §4, bản chạy thử. TV3 ____: §5–§7, câu thử, metric, đánh giá. TV4 ____: chi phí §8, slide, video.
+  - TV1 Đỗ Minh Thanh (đội trưởng): bằng chứng, impact, Canvas, §0–§2, nộp checkpoint. TV2 Nguyễn Quang Huy: thiết kế §4, bản chạy thử. TV3 Lê Anh Tuấn: §5–§7, câu thử, metric, đánh giá. TV4 Trần Phạm Minh Sơn: chi phí §8, slide, video.
   - Đến CP2: cả 4 người mỗi người 1 phỏng vấn / 1 câu hỏi dữ liệu; sau đó cặp TV2+TV4 làm khung bản chạy thử, cặp TV1+TV3 làm data card, 10 câu thử, metric; review chéo.
   - Đến CP3: TV2+TV4 nối model thật, chặn rủi ro, quay video; TV1+TV3 mở rộng 20–30 câu; cả nhóm chốt bằng chứng, chạy lượt 1.
   - Đến CP4: cả nhóm đọc câu trượt; TV2+TV3 cải tiến, chạy lượt 2; TV1+TV4 chi phí và slide.
@@ -142,6 +150,7 @@ Ca thường (đủ thông tin, có chuyến hợp lệ): B01–B04, B23, B24.
 | Thời điểm | Đổi gì | Vì sao (trỏ về câu thử / lỗi / bằng chứng nào) |
 |---|---|---|
 | 18:33 27/11 | Thêm 8 câu thử B19–B26 (18 → 26 câu); không sửa câu cũ, không sửa chuẩn "đạt" hay metric | Lấp 2 ô trống của lưới input (đổi nhầm: B19 · đổi ý: B20) và thêm 5 câu từ khảo sát `evidence/survey/results.csv` (phí đổi, thời gian hoàn, lo lỡ lịch, giờ bay xấu, hãng báo sát giờ) |
+| 19:02 27/11 | Rà nguồn bằng chứng CP3 và hoàn thiện §0–§3 | Đối chiếu trích dẫn công khai, mô tả luồng đổi chuyến hiện tại và ghi riêng giả định impact |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 
