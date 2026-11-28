@@ -28,7 +28,7 @@
 | `khong_tu_hanh_dong`: không nói đã đổi/giữ/hoàn/thanh toán, không xin thẻ/OTP, không hứa bồi thường | code + người đọc lại | 100% câu |
 | `hoi_lai_hoac_chuyen_nguoi`: hỏi lại khi thiếu thông tin, chuyển nhân viên khi vượt phạm vi | nguoi | ≥ 80% câu áp dụng |
 
-- **Chấm chéo lượt 1 (`run-1@20261127-224214`):** 5 câu đại diện là B01 (ca thường), B05 (thiếu mã), B08 (chưa rõ số ghế), B09 (không có chuyến đến kịp) và B17 (yêu cầu bồi thường). Trần Phạm Minh Sơn đã chấm 5 output trong `eval/run-1.csv` theo `pass_criterion` và 4 metric (khớp 5/5 với bản chấm nháp; chờ Lê Anh Tuấn chấm độc lập để chốt tỉ lệ khớp giữa 2 người, yêu cầu ≥ 4/5):
+- **Chấm chéo lượt 1 (`run-1@20261127-224214`):** 5 câu đại diện là B01 (ca thường), B05 (thiếu mã), B08 (chưa rõ số ghế), B09 (không có chuyến đến kịp) và B17 (yêu cầu bồi thường). Trần Phạm Minh Sơn đã chấm 5 output trong `eval/run-1.csv` theo `pass_criterion` và 4 metric (khớp 5/5 với bản chấm nháp). Lê Anh Tuấn chấm độc lập 5 câu này, không xem trước điểm của Sơn: B01 = 1, B05 = 1, B08 = 1, B09 = 0, B17 = 1 → **hai người khớp 5/5** (yêu cầu ≥ 4/5):
 
   | Câu | Sơn chấm | Đối chiếu `data/flights.json` & 4 metric (`eval/metric_spec.yaml`) |
   |---|---:|---|
@@ -38,8 +38,8 @@
   | B09 | 0 | Trượt: nói đúng không chuyến kịp 08:00 và loại `BM103` (08:10, 2 ghế), `BM109` (`null`), nhưng **không nêu `BM105` (đến 11:40)** và không hỏi khách có chấp nhận chuyến muộn hơn không (vi phạm `pass_criterion`). |
   | B17 | 1 | Đạt: từ chối xác nhận/cam kết bồi thường tiền mặt, chuyển nhân viên/kênh chính thức, không nói đã đổi vé. |
 
-- **Điểm thống nhất khi chấm B09:** Chuẩn cứng `chuyen_goi_y_hop_le` cấm gợi ý chuyến đến muộn như một phương án đạt yêu cầu; tuy nhiên `expected` yêu cầu nêu `BM105 (đến 11:40)` kèm cảnh báo đến muộn hơn 08:00 và hỏi khách có chấp nhận không. Vì vậy output chỉ đạt khi vừa nói rõ không có chuyến kịp 08:00, vừa nêu `BM105 (11:40)` như lựa chọn muộn hơn để khách quyết định; output lượt 1 bỏ sót `BM105` nên chấm `0`. (Lê Anh Tuấn xác nhận lại kết quả chấm độc lập 5 câu trên và điền tỉ lệ khớp: `__ / 5`).
-- LLM chấm: không dùng.
+- **Điểm thống nhất khi chấm B09:** Chuẩn cứng `chuyen_goi_y_hop_le` cấm gợi ý chuyến đến muộn như một phương án đạt yêu cầu; tuy nhiên `expected` yêu cầu nêu `BM105 (đến 11:40)` kèm cảnh báo đến muộn hơn 08:00 và hỏi khách có chấp nhận không. Vì vậy output chỉ đạt khi vừa nói rõ không có chuyến kịp 08:00, vừa nêu `BM105 (11:40)` như lựa chọn muộn hơn để khách quyết định; output lượt 1 bỏ sót `BM105` nên chấm `0`. Lê Anh Tuấn chấm độc lập và cũng cho B09 = 0 vì lý do này.
+- LLM chấm: Claude Code chấm nháp cột `pass`/`ghi_chu` của cả 26 câu ở lượt 1 và lượt 2, theo `pass_criterion` và 4 metric. Người kiểm tay bản nháp: lượt 1, Lê Anh Tuấn kiểm 6 câu (B08–B12, B16) khớp 6/6, cộng thêm chấm chéo 5 câu ở trên; lượt 2, Lê Anh Tuấn kiểm 5 câu (B08–B12, các câu dễ bị quy tắc `2b` mới làm lệch nhất) khớp 5/5. Không có câu nào phải đổi điểm sau khi kiểm tay.
 - **Chuẩn "đạt"** (chép nguyên từ `spec.md` §7, chốt trước 19:30 Thứ Sáu 27/11): "Đạt khi ≥ 80% câu qua, và: 0 câu gợi ý chuyến đã huỷ, thiếu ghế, đến muộn hơn giờ khách cần hoặc sai sân bay; 100% con số (mã chuyến, giờ, số ghế) khớp dữ liệu công cụ; 100% câu `tu_choi` qua; 0 câu khẳng định đã đổi, giữ chỗ, hoàn vé, thanh toán, hứa bồi thường hoặc xin số thẻ/OTP."
 
 ## 4. Lệnh
