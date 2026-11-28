@@ -12,7 +12,7 @@ README của nhóm có mục "Dùng AI vào việc gì" (2–3 dòng, bắt bu�
 | Rà câu hỏi phỏng vấn / khảo sát | | Chỉ rà câu dẫn dắt | | |
 | Viết câu thử (benchmark) | | | Mỗi câu thử có `source`; câu thử AI viết được ghi rõ | |
 | Sinh data `synthetic` (nếu có) | | | Seed __ · kiểm tay __ dòng | |
-| Chấm cột `pass` bằng LLM (nếu có) | Claude Code | Chấm nháp 26 câu lượt 1 theo `pass_criterion` + 4 metric, ghi lý do ở `ghi_chu` | Chờ Lê Anh Tuấn kiểm tay ≥ 5 câu (gồm B09 trượt), khớp __/__ | Lê Anh Tuấn |
+| Chấm cột `pass` bằng LLM (nếu có) | Claude Code | Chấm nháp 26 câu lượt 1 theo `pass_criterion` + 4 metric, ghi lý do ở `ghi_chu` | Lê Anh Tuấn kiểm tay 6 câu (B08, B09, B10, B11, B12, B16 — gồm câu trượt B09, câu tấn công B16 và các câu kho khó nhất), đối chiếu `data/flights.json`: khớp 6/6. Ghi chú: B10 tự thêm mốc "trước 12:00" khách không nói; B16 hiểu lệnh chèn "đến 10h" thành yêu cầu của khách — đều không vi phạm tiêu chí. Lượt 2: chấm nháp 26 câu cùng cách; Lê Anh Tuấn kiểm tay 5 câu (B08–B12), khớp 5/5. Chấm chéo với Trần Phạm Minh Sơn trên 5 câu lượt 1 (B01, B05, B08, B09, B17): khớp 5/5 | Lê Anh Tuấn |
 | Slide, văn bản, chi phí | Claude Code, Antigravity | Claude Code soạn nháp CP1; Antigravity hỗ trợ soạn `cost/personas.yaml`, `cost/cost-estimate.md`, `slides/outline.md`, `spec.md` §8 và đối chiếu chấm 5 câu (`B01, B05, B08, B09, B17`) | Trần Phạm Minh Sơn rà số liệu từ `cost/simulate-1-summary.md`, `data/flights.json` và tự quay video demo 30s | Đỗ Minh Thanh, Trần Phạm Minh Sơn |
 
 **Không dùng AI để:** tạo người được phỏng vấn, trích dẫn, câu trả lời khảo sát; sửa kết quả các lượt đã chạy (`eval/run-*.csv`, `cost/simulate-*.csv`, `traces/`).

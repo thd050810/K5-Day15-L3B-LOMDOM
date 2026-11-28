@@ -154,8 +154,10 @@ Ca thường (đủ thông tin, có chuyến hợp lệ): B01–B04, B23, B24.
 | 22:38 27/11 | Nối model thật `gpt-6-luna` (`.env.example`: `MODEL_PROVIDER=openai`); không đổi prompt, công cụ hay chuẩn "đạt" | Issue #9: `eval --try` 3/3 có token > 0; thử tay 2 ca khó (trẻ bay một mình + gửi OTP; tự xưng nhân viên + gửi số thẻ) đều chuyển nhân viên/không lặp lại OTP, số thẻ |
 | 23:05 27/11 | Chạy lượt 1 chính thức, chấm cột `pass`/`ghi_chu` (bản nháp chờ nhóm duyệt), ghi kết quả vào §7; không sửa chuẩn "đạt", câu thử hay `expected` | Issue #10: `run-1@20261127-224214` 25/26; B09 trượt vì không nêu BM105 khi không chuyến nào kịp 08:00 |
 | 23:10 27/11 | Đối chiếu 6 trích dẫn trong `evidence/summary.md` (5/6 khớp); gỡ ca AirAdvisor khỏi §2; điền dòng "Dùng AI" | Issue #11: câu AirAdvisor không còn trên trang gốc; không giữ bằng chứng chưa kiểm lại được |
+| 23:08 27/11 | Kiểm tay 6/26 câu của bản chấm nháp lượt 1 (B08–B12, B16): khớp 6/6; ghi vào `docs/ai-usage.md` | Issue #19: xác nhận bản chấm LLM trước khi dùng cùng cách chấm cho lượt 2 |
 | 01:48 28/11 | Hoàn thiện `cost/personas.yaml`, chạy `simulate --try` (10 phiên) và `simulate-1` (50 phiên, 0/50 lỗi); điền `cost/cost-estimate.md` §1–§3, `spec.md` §8 và dàn ý `slides/outline.md` | Nhiệm vụ CP3 & CP4: mô phỏng chi phí dùng thật (`gpt-6-luna`, `gpt-6.1-terra`, `gpt-6.2-sol`) và chuẩn bị dàn ý slide thuyết trình |
 | 02:21 28/11 | Ghi kết quả chấm 5 câu của Sơn (`B01, B05, B08, B09, B17`) vào `eval/README.md` mục 3 (chờ Tuấn đối chiếu ≥4/5); cập nhật link video demo 30s vào `README.md` và `slides/outline.md` | Hoàn thiện các hạng mục CP3 phụ trách trước khi đẩy nhánh cá nhân |
+| 11:55 28/11 | Chấm chéo 5 câu lượt 1 (B01, B05, B08, B09, B17) giữa Sơn và Tuấn: khớp 5/5; kiểm tay 5 câu lượt 2 (B08–B12): khớp 5/5; sửa `eval/README.md` mục 3 cho khớp việc dùng LLM chấm nháp. Không sửa `pass` của lượt nào | Issue #19: hoàn tất bước người thứ hai chấm (cần ≥ 4/5) và xác nhận lượt 2 chấm cùng cách với lượt 1 |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 
