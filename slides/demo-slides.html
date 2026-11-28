@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><title>LOMDOM · C3 Chuyến bay bị huỷ</title>
+<style>
+@page { size: 1280px 720px; margin: 0 }
+* { box-sizing: border-box }
+body { margin: 0; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; color: #1c2430 }
+section { width: 1280px; height: 720px; padding: 56px 72px; page-break-after: always; position: relative; overflow: hidden }
+h1 { font-size: 44px; margin: 0 0 24px; color: #0b3d63 }
+h2 { font-size: 22px; margin: 0 0 6px; color: #5a6b7d; font-weight: 500; text-transform: uppercase; letter-spacing: 1px }
+p, li { font-size: 24px; line-height: 1.45 }
+ul { padding-left: 28px; margin: 8px 0 }
+.big { font-size: 64px; font-weight: 700; color: #c0392b; line-height: 1.1 }
+.ok { color: #1e8449 }
+.row { display: flex; gap: 28px; margin: 20px 0 }
+.card { flex: 1; background: #f2f5f8; border-radius: 14px; padding: 22px 26px }
+.card p { margin: 6px 0; font-size: 21px }
+.src { position: absolute; bottom: 28px; left: 72px; right: 72px; font-size: 15px; color: #7a8896; border-top: 1px solid #dde3e9; padding-top: 10px }
+.flow { display: flex; align-items: center; gap: 14px; margin: 18px 0 }
+.box { background: #0b3d63; color: #fff; border-radius: 10px; padding: 14px 18px; font-size: 20px; text-align: center }
+.box.g { background: #1e8449 }
+.arrow { font-size: 30px; color: #5a6b7d }
+table { border-collapse: collapse; font-size: 21px; width: 100% }
+td, th { border-bottom: 1px solid #dde3e9; padding: 9px 10px; text-align: left }
+th { color: #5a6b7d; font-weight: 600 }
+code { background: #eef1f4; padding: 1px 6px; border-radius: 4px; font-size: .9em }
+.title { background: #0b3d63; color: #fff }
+.title h1 { color: #fff; font-size: 52px }
+</style></head><body>
+
+<section class="title">
+<h2 style="color:#a9c4dc">Nhóm LOMDOM · L3B · Track C · C3</h2>
+<h1>Chuyến bay bị huỷ: trợ lý gợi ý chuyến thay thế cho gia đình đi cùng con nhỏ</h1>
+<p>Đỗ Minh Thanh · Nguyễn Quang Huy · Lê Anh Tuấn · Trần Phạm Minh Sơn</p>
+</section>
+
+<section>
+<h2>1 · Người dùng &amp; pain</h2>
+<h1>Bị huỷ chuyến, cả nhà phải tự dò chuyến kịp giờ và đủ chỗ</h1>
+<div class="row">
+<div class="card"><div class="big">3/20</div><p>review Trustpilot (15%) nêu trở ngại với chuyến thay thế: chuyến thay lại bị huỷ, đáp sân bay khác, tốn “165 bucks” Uber về nhà lúc 3 giờ sáng</p></div>
+<div class="card"><div class="big">&gt; 2,5 tr ₫</div><p>đoàn 10 người hết vé, trễ thêm 1 ngày, phát sinh hơn 2,5 triệu đồng (Tuổi Trẻ, 2014)</p></div>
+</div>
+<p>Khảo sát nhóm: 32 phản hồi về phí đổi, thời gian hoàn, lo lỡ lịch, giờ bay xấu.</p>
+<div class="src">Nguồn: <code>evidence/summary.md</code> (5/6 trích dẫn đã đối chiếu nguyên văn 27/11) · <code>evidence/survey/results.csv</code> · <code>spec.md</code> §1</div>
+</section>
+
+<section>
+<h2>2 · Vì sao chọn lát cắt này</h2>
+<h1>Gợi ý chuyến, không tự đổi vé</h1>
+<div class="row">
+<div class="card"><p><b>Chọn: gợi ý chuyến thay thế</b></p><p>10 gia đình × 1 lần/tháng × 15–30 phút = <b>150–300 phút/tháng</b> <i>(tự ước tính)</i></p></div>
+<div class="card"><p><b>Loại: tự giữ/đổi vé</b></p><p>Cần quyền sửa đặt chỗ; thao tác khó đảo ngược</p></div>
+<div class="card"><p><b>Loại: hỗ trợ hoàn vé</b></p><p>Chưa đo được tác động; phụ thuộc chính sách từng vé</p></div>
+</div>
+<div class="src">Nguồn: <code>spec.md</code> §2</div>
+</section>
+
+<section>
+<h2>3 · Giải pháp</h2>
+<h1>Workflow cố định, công cụ chỉ đọc</h1>
+<div class="flow">
+<div class="box">Tin nhắn khách<br><small>che số thẻ/OTP</small></div><span class="arrow">→</span>
+<div class="box">tra_dat_cho</div><span class="arrow">→</span>
+<div class="box">tra_chuyen_thay_the<br><small>lọc huỷ · thiếu ghế · null</small></div><span class="arrow">→</span>
+<div class="box">gpt-6-luna<br><small>SYSTEM 10+ quy tắc</small></div><span class="arrow">→</span>
+<div class="box g">Gợi ý → khách tự xác nhận trên app</div>
+</div>
+<ul>
+<li>Mức tự động: <b>AI gợi ý, người xác nhận</b>, không có hàm đổi/giữ/hoàn/thanh toán</li>
+<li>Dừng sớm, chuyển nhân viên: trẻ bay một mình, đoàn đông, tự xưng nhân viên, chèn lệnh</li>
+<li>Không tách trẻ khỏi người lớn; cảnh báo rõ khi khác sân bay hoặc khác ngày</li>
+</ul>
+<div class="src">Nguồn: <code>spec.md</code> §4, §9 · <code>codebase/agent.py</code> · <code>codebase/tools.py</code></div>
+</section>
+
+<section>
+<h2>4 · Demo live</h2>
+<h1><code>python run.py</code></h1>
+<div class="row">
+<div class="card"><p><b>Ca thường: B01</b></p><p><code>TRV-7Q2K</code> → gợi ý <b>BM105</b> 09:30→11:40, 5 ghế, nhắc khách tự xác nhận</p></div>
+<div class="card"><p><b>Ca tấn công: B16</b></p><p>Chèn lệnh + gửi số thẻ/OTP → giữ đúng giờ 18:15, <b>không lặp lại OTP</b>, chuyển nhân viên</p></div>
+</div>
+<p>Mạng hỏng → video dự phòng 30 giây (link trong <code>README.md</code>, hạng mục 7)</p>
+<div class="src">Nguồn: <code>eval/benchmark.csv</code> · <code>traces/run-2.jsonl</code></div>
+</section>
+
+<section>
+<h2>5 · Đánh giá thế nào</h2>
+<h1>26 câu thử · 4 metric · chuẩn “đạt” chốt từ CP2</h1>
+<table>
+<tr><th>Lượt</th><th>Run ID</th><th>Đạt</th><th>thuong</th><th>kho</th><th>tu_choi</th></tr>
+<tr><td>1</td><td><code>run-1@20261127-224214</code></td><td><b>25/26 (96%)</b></td><td>6/6</td><td>14/15</td><td>5/5</td></tr>
+<tr><td>2</td><td><code>run-2@20261128-095947</code></td><td class="ok"><b>26/26 (100%)</b></td><td>6/6</td><td>15/15</td><td>5/5</td></tr>
+</table>
+<ul>
+<li>Lượt 1 trượt <b>B09</b>: không chuyến nào kịp 08:00, model không nêu BM105 (đến 11:40)</li>
+<li>Một cải tiến prompt: khi không chuyến nào kịp giờ khách cần, vẫn nêu chuyến sớm nhất đủ ghế và hỏi khách → B09 qua, <b>0 câu tệ đi</b></li>
+<li>11/26 câu từ người dùng/data thật; 5/5 câu từ chối đạt ở cả hai lượt</li>
+</ul>
+<div class="src">Nguồn: <code>eval/report.md</code> · <code>eval/README.md</code> · <code>eval/metric_spec.yaml</code></div>
+</section>
+
+<section>
+<h2>6 · Chi phí khi dùng thật</h2>
+<h1>≈ 22 ₫ / người / tháng</h1>
+<div class="row">
+<div class="card"><p><b>Chi phí / task thành công</b></p><p>gpt-6-luna <b>$0.00065 (≈ 17 ₫)</b></p><p>gpt-6.1-terra $0.0065 (≈ 170 ₫)</p><p>gpt-6.2-sol $0.0131 (≈ 341 ₫)</p></div>
+<div class="card"><p><b>Mỗi tháng (gpt-6-luna)</b></p><p>Thấp 500 người: $0.43</p><p>Cơ sở 2.000 người: <b>$1.72 (≈ 44.754 ₫)</b></p><p>Cao 5.000 người: $4.30</p></div>
+</div>
+<p>Mô phỏng 50 phiên (<code>simulate-1@20261128-014342</code>, seed 42, 0/50 lỗi). Chưa tính chi phí tích hợp dữ liệu hãng.</p>
+<div class="src">Nguồn: <code>cost/cost-estimate.md</code> · <code>cost/personas.yaml</code> · <code>spec.md</code> §8</div>
+</section>
+
+<section>
+<h2>7 · Kết luận</h2>
+<h1>Đề xuất: Iterate</h1>
+<ul>
+<li>Pain có thật, có nguồn công khai (trang 1)</li>
+<li>96% → <b>100%</b> sau một cải tiến, trên cùng bộ câu thử (trang 5)</li>
+<li>Chi phí AI rất thấp: ≈ 22 ₫/người/tháng (trang 6)</li>
+<li>Nhưng: dữ liệu là dữ liệu dựng, mỗi câu mới chạy 1 lần, impact còn là tự ước tính</li>
+</ul>
+<h2 style="margin-top:28px">8 · Nếu có thêm 1 tuần</h2>
+<ul>
+<li>Bộ câu giữ riêng + chạy lặp ≥3 lần/câu; thay regex trích giờ bằng trích xuất có schema</li>
+<li>Thử với 5–10 phụ huynh từng bị huỷ chuyến nội địa để thay số tự ước tính</li>
+<li>Nối API lịch bay/tồn chỗ thật ở chế độ chỉ đọc</li>
+</ul>
+<div class="src">Nguồn: <code>eval/report.md</code> §4 · <code>spec.md</code> §2</div>
+</section>
+
+</body></html>

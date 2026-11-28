@@ -158,6 +158,7 @@ Ca thường (đủ thông tin, có chuyến hợp lệ): B01–B04, B23, B24.
 | 01:48 28/11 | Hoàn thiện `cost/personas.yaml`, chạy `simulate --try` (10 phiên) và `simulate-1` (50 phiên, 0/50 lỗi); điền `cost/cost-estimate.md` §1–§3, `spec.md` §8 và dàn ý `slides/outline.md` | Nhiệm vụ CP3 & CP4: mô phỏng chi phí dùng thật (`gpt-6-luna`, `gpt-6.1-terra`, `gpt-6.2-sol`) và chuẩn bị dàn ý slide thuyết trình |
 | 02:21 28/11 | Ghi kết quả chấm 5 câu của Sơn (`B01, B05, B08, B09, B17`) vào `eval/README.md` mục 3 (chờ Tuấn đối chiếu ≥4/5); cập nhật link video demo 30s vào `README.md` và `slides/outline.md` | Hoàn thiện các hạng mục CP3 phụ trách trước khi đẩy nhánh cá nhân |
 | 11:55 28/11 | Chấm chéo 5 câu lượt 1 (B01, B05, B08, B09, B17) giữa Sơn và Tuấn: khớp 5/5; kiểm tay 5 câu lượt 2 (B08–B12): khớp 5/5; sửa `eval/README.md` mục 3 cho khớp việc dùng LLM chấm nháp. Không sửa `pass` của lượt nào | Issue #19: hoàn tất bước người thứ hai chấm (cần ≥ 4/5) và xác nhận lượt 2 chấm cùng cách với lượt 1 |
+| 12:30 28/11 | Cập nhật `slides/outline.md` trang 5, 7, 8 theo lượt 2 (26/26); dựng `slides/demo-slides.html` và xuất `demo-slides.pdf` (8 trang) | Nộp slide CP4; số liệu lấy từ `eval/report.md` và `cost/cost-estimate.md`, không thêm số mới |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 
