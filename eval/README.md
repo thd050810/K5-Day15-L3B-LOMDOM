@@ -70,4 +70,6 @@ Lượt chạy lại vì lỗi kỹ thuật, lượt sau CP4: ghi thêm dòng, k
 
 ## 6. Lỗi chính
 
-Tóm 2–3 dòng từ `eval/report.md`: nhóm lỗi lớn nhất · đã sửa gì · còn lại gì.
+- **Lượt 1 (`run-1@20261127-224214`, 25/26 · 96%):** trượt 1 câu (`B09`) do khi `hop_le` rỗng model chỉ đẩy sang nhân viên mà bỏ sót chuyến dự phòng sớm nhất đủ 3 ghế (`BM105`, đến 11:40); kèm điểm yếu phụ ở `B08` (bỏ qua `BM305` ngày 29/11), `B10` (tự thêm mốc 12:00) và `B14/B19` (chuyển nhân viên thiếu câu tóm tắt).
+- **Đã sửa → Lượt 2 (`run-2@20261128-095947`, 26/26 · 100%, 0 câu tệ đi):** cập nhật `SYSTEM` prompt trong `codebase/agent.py` (commit `e8b087c`) thêm Quy tắc `2b` xử lý khi `hop_le` rỗng, siết Quy tắc `1` không suy diễn mốc giờ và bổ sung Quy tắc `6` kèm câu tóm tắt khi chuyển nhân viên.
+- **Còn lại:** trên 26 câu thử không còn câu trượt, nhưng phần trích ngày/giờ vẫn phụ thuộc regex (dễ hụt với cách nói tự do ngoài mẫu), chưa chạy lặp nhiều lần/câu để đo phương sai, và dữ liệu `flights.json` còn là `synthetic` chưa có phí/chính sách hoàn thật.
